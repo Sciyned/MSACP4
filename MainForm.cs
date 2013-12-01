@@ -346,16 +346,12 @@ namespace Project4
             if (employeeArray[indexInt].FSA != 0.0)
                 fsaCheckBox.Checked = true;
         }
-<<<<<<< HEAD
 		
 		void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			// Instantiate AboutMainForm object to access the form
+			// Instantiate About
 			AboutMainForm showForm = new AboutMainForm();
-			
 			showForm.ShowDialog();
 		}
-=======
->>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 	}
 }

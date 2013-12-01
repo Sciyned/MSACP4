@@ -51,21 +51,12 @@ namespace Project4
 				deductionsGroupBox.Enabled = true;
 			}
 		}
-<<<<<<< HEAD
-		
-		
-		void ExitToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			this.Close();
-		}
 		
 		void HelpToolStripMenuItem1Click(object sender, EventArgs e)
 		{
-			// Instantiate EditHelp
+			// Instantiate Help
 			EditHelp showForm = new EditHelp();
 			showForm.ShowDialog();
 		}
-=======
->>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 	}
 }
