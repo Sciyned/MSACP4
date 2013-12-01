@@ -1,0 +1,27 @@
+E:\C# Dev\Project4\bin\Debug\Project4.exe
+E:\C# Dev\Project4\bin\Debug\Project4.pdb
+E:\C# Dev\Project4\obj\Debug\ResolveAssemblyReference.cache
+E:\C# Dev\Project4\obj\Debug\GenerateResource.read.1.tlog
+E:\C# Dev\Project4\obj\Debug\GenerateResource.write.1.tlog
+E:\C# Dev\Project4\obj\Debug\Project4.exe
+E:\C# Dev\Project4\obj\Debug\Project4.pdb
+E:\C# Dev\Project4\obj\Debug\Project4.PayrollMainForm.resources
+E:\C#Dev\Project4\obj\Debug\ResolveAssemblyReference.cache
+E:\C#Dev\Project4\obj\Debug\Project4.PayrollMainForm.resources
+E:\C#Dev\Project4\obj\Debug\Project4.SplashForm.resources
+E:\C#Dev\Project4\obj\Debug\GenerateResource.read.1.tlog
+E:\C#Dev\Project4\obj\Debug\GenerateResource.write.1.tlog
+E:\C#Dev\Project4\obj\Debug\Project4.exe
+E:\C#Dev\Project4\obj\Debug\Project4.pdb
+E:\C#Dev\Project4\bin\Debug\Project4.exe
+E:\C#Dev\Project4\bin\Debug\Project4.pdb
+E:\C#Dev\Project4\obj\Debug\Project4.EditEmployee.resources
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.exe
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.pdb
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\bin\Debug\Project4.exe
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\bin\Debug\Project4.pdb
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.EditEmployee.resources
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.PayrollMainForm.resources
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.SplashForm.resources
+C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.csproj.GenerateResource.Cache
+E:\C#Dev\Project4\obj\Debug\Project4.AboutMainForm.resources
