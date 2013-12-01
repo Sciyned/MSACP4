@@ -22,6 +22,9 @@ namespace Project4
 	/// </summary>
 	public partial class PayrollMainForm : Form
 	{
+		// Instantiate objects from other classes
+		EditEmployee showForm = new EditEmployee();
+		
 		public PayrollMainForm()
 		{
 			//
@@ -52,6 +55,11 @@ namespace Project4
 		void PayrollMainFormLoad(object sender, EventArgs e)
 		{
 			DataProcessing LoadData = new DataProcessing();
+		}
+		
+		void EditEmployeeToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			showForm.ShowDialog();
 		}
 	}
 }

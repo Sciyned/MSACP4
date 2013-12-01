@@ -15,3 +15,4 @@ E:\C#Dev\Project4\obj\Debug\Project4.exe
 E:\C#Dev\Project4\obj\Debug\Project4.pdb
 E:\C#Dev\Project4\bin\Debug\Project4.exe
 E:\C#Dev\Project4\bin\Debug\Project4.pdb
+E:\C#Dev\Project4\obj\Debug\Project4.EditEmployee.resources

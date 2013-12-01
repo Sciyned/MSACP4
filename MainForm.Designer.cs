@@ -71,6 +71,9 @@ namespace Project4
 			this.departmentComboBox = new System.Windows.Forms.ComboBox();
 			this.positionComboBox = new System.Windows.Forms.ComboBox();
 			this.basicInfoGroupBox = new System.Windows.Forms.GroupBox();
+			this.employeeLastNameComboBox = new System.Windows.Forms.ComboBox();
+			this.employeeFirstNameComboBox = new System.Windows.Forms.ComboBox();
+			this.employeeIDComboBox = new System.Windows.Forms.ComboBox();
 			this.addInfoGroupBox = new System.Windows.Forms.GroupBox();
 			this.financialInfoGroupBox = new System.Windows.Forms.GroupBox();
 			this.hoursTextField = new System.Windows.Forms.TextBox();
@@ -92,9 +95,6 @@ namespace Project4
 			this.printButton = new System.Windows.Forms.Button();
 			this.exitButton = new System.Windows.Forms.Button();
 			this.clearButton = new System.Windows.Forms.Button();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.comboBox2 = new System.Windows.Forms.ComboBox();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.menuStrip1.SuspendLayout();
 			this.basicInfoGroupBox.SuspendLayout();
 			this.addInfoGroupBox.SuspendLayout();
@@ -252,6 +252,7 @@ namespace Project4
 			this.editEmployeeToolStripMenuItem.Name = "editEmployeeToolStripMenuItem";
 			this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
 			this.editEmployeeToolStripMenuItem.Text = "Edit Em&ployee Information";
+			this.editEmployeeToolStripMenuItem.Click += new System.EventHandler(this.EditEmployeeToolStripMenuItemClick);
 			// 
 			// toolStripSeparator4
 			// 
@@ -309,7 +310,6 @@ namespace Project4
 			// 
 			// departmentComboBox
 			// 
-			this.departmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.departmentComboBox.FormattingEnabled = true;
 			this.departmentComboBox.Items.AddRange(new object[] {
 									"Human Resources",
@@ -324,7 +324,6 @@ namespace Project4
 			// 
 			// positionComboBox
 			// 
-			this.positionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.positionComboBox.FormattingEnabled = true;
 			this.positionComboBox.Items.AddRange(new object[] {
 									"Manager",
@@ -339,9 +338,9 @@ namespace Project4
 			// 
 			// basicInfoGroupBox
 			// 
-			this.basicInfoGroupBox.Controls.Add(this.comboBox3);
-			this.basicInfoGroupBox.Controls.Add(this.comboBox2);
-			this.basicInfoGroupBox.Controls.Add(this.comboBox1);
+			this.basicInfoGroupBox.Controls.Add(this.employeeLastNameComboBox);
+			this.basicInfoGroupBox.Controls.Add(this.employeeFirstNameComboBox);
+			this.basicInfoGroupBox.Controls.Add(this.employeeIDComboBox);
 			this.basicInfoGroupBox.Controls.Add(this.employeeIDLabel);
 			this.basicInfoGroupBox.Controls.Add(this.label2);
 			this.basicInfoGroupBox.Controls.Add(this.firstNameLabel);
@@ -352,6 +351,30 @@ namespace Project4
 			this.basicInfoGroupBox.TabIndex = 13;
 			this.basicInfoGroupBox.TabStop = false;
 			this.basicInfoGroupBox.Text = "Basic Information";
+			// 
+			// employeeLastNameComboBox
+			// 
+			this.employeeLastNameComboBox.FormattingEnabled = true;
+			this.employeeLastNameComboBox.Location = new System.Drawing.Point(95, 110);
+			this.employeeLastNameComboBox.Name = "employeeLastNameComboBox";
+			this.employeeLastNameComboBox.Size = new System.Drawing.Size(121, 21);
+			this.employeeLastNameComboBox.TabIndex = 7;
+			// 
+			// employeeFirstNameComboBox
+			// 
+			this.employeeFirstNameComboBox.FormattingEnabled = true;
+			this.employeeFirstNameComboBox.Location = new System.Drawing.Point(95, 76);
+			this.employeeFirstNameComboBox.Name = "employeeFirstNameComboBox";
+			this.employeeFirstNameComboBox.Size = new System.Drawing.Size(121, 21);
+			this.employeeFirstNameComboBox.TabIndex = 6;
+			// 
+			// employeeIDComboBox
+			// 
+			this.employeeIDComboBox.FormattingEnabled = true;
+			this.employeeIDComboBox.Location = new System.Drawing.Point(95, 25);
+			this.employeeIDComboBox.Name = "employeeIDComboBox";
+			this.employeeIDComboBox.Size = new System.Drawing.Size(121, 21);
+			this.employeeIDComboBox.TabIndex = 5;
 			// 
 			// addInfoGroupBox
 			// 
@@ -495,7 +518,6 @@ namespace Project4
 			// 
 			// monthComboBox
 			// 
-			this.monthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.monthComboBox.FormattingEnabled = true;
 			this.monthComboBox.Items.AddRange(new object[] {
 									"January",
@@ -569,33 +591,6 @@ namespace Project4
 			this.clearButton.Text = "&Clear Fields";
 			this.clearButton.UseVisualStyleBackColor = true;
 			// 
-			// comboBox1
-			// 
-			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(95, 25);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 21);
-			this.comboBox1.TabIndex = 5;
-			// 
-			// comboBox2
-			// 
-			this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox2.FormattingEnabled = true;
-			this.comboBox2.Location = new System.Drawing.Point(95, 76);
-			this.comboBox2.Name = "comboBox2";
-			this.comboBox2.Size = new System.Drawing.Size(121, 21);
-			this.comboBox2.TabIndex = 6;
-			// 
-			// comboBox3
-			// 
-			this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(95, 110);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(121, 21);
-			this.comboBox3.TabIndex = 7;
-			// 
 			// PayrollMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -626,9 +621,9 @@ namespace Project4
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.ComboBox comboBox2;
-		private System.Windows.Forms.ComboBox comboBox3;
+		private System.Windows.Forms.ComboBox employeeIDComboBox;
+		private System.Windows.Forms.ComboBox employeeFirstNameComboBox;
+		private System.Windows.Forms.ComboBox employeeLastNameComboBox;
 		private System.Windows.Forms.Button clearButton;
 		private System.Windows.Forms.Button exitButton;
 		private System.Windows.Forms.Button printButton;

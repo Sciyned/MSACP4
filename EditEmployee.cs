@@ -17,10 +17,17 @@ using System.Windows.Forms;
 namespace Project4
 {
 	/// <summary>
-	/// Description of EditEmployee.
+	/// The EditEmployee form is to make more detailed adjustments to the specific employee. Compared
+	/// to the MainForm, EditEmployee form has more information regarding the employee, in terms of
+	/// deduction amounts.
 	/// </summary>
 	public partial class EditEmployee : Form
 	{
+		// Declare variables for 
+		
+		// Instantiate Objects from other classes
+		Accounts accountAccess = new Accounts();
+		
 		public EditEmployee()
 		{
 			//
@@ -31,6 +38,18 @@ namespace Project4
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
+		}
+		
+		
+		void EmployeeIDComboBoxSelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (employeeIDComboBox.SelectedIndex != -1)
+			{
+				basicGroupBox.Enabled = true;
+				financialGroupBox.Enabled = true;
+				employmentGroupBox.Enabled = true;
+				deductionsGroupBox.Enabled = true;
+			}
 		}
 	}
 }

@@ -22,8 +22,15 @@ namespace Project4
 	/// </summary>
 	public class Accounts
 	{
+		// Declare temporary variables to assign to lists
+		private int employeeIDInteger;
+		private double employeeSalaryDouble, employeeMedicalInsuranceDouble, employeeLifeInsuranceDouble, employeeRetirementDouble, employeeFsaDouble;
+		private String employeeFirstNameString, employeeLastNameString, employeeDepartmentString, employeePositionString;
+		
+		// Declare lists to hold employee information
 		private List<int> employeeID = new List<int>();
-		private List<String> employeeName = new List<String>();
+		private List<String> employeeFirstName = new List<String>();
+		private List<String> employeeLastName = new List<String>();
 		private List<String> employeeDepartment = new List<String>();
 		private List<String> employeePosition = new List<String>();
 		private List<double> employeeSalary = new List<double>();
@@ -34,6 +41,104 @@ namespace Project4
 		
 		public Accounts()
 		{
+		}
+		
+		// Mutator Methods
+		public int setEmployeeID
+		{
+			set
+			{
+				employeeIDInteger = value;
+			}
+		}
+		public String setFirstName
+		{
+			set
+			{
+				employeeFirstNameString = value;
+			}
+		}
+		public String setLastName
+		{
+			set
+			{
+				employeeLastNameString = value;
+			}
+		}
+		public String setDepartment
+		{
+			set
+			{
+				employeeDepartmentString = value;
+			}
+		}
+		public String setPosition
+		{
+			set
+			{
+				employeePositionString = value;
+			}
+		}
+		public double setSalary
+		{
+			set
+			{
+				employeeSalaryDouble = value;
+			}
+		}
+		public double setMedicalInsurance
+		{
+			set
+			{
+				employeeMedicalInsuranceDouble = value;
+			}
+		}
+		public double setLifeInsurance
+		{
+			set
+			{
+				employeeLifeInsuranceDouble = value;
+			}
+		}
+		public double setRetirement
+		{
+			set
+			{
+				employeeRetirementDouble = value;
+			}
+		}
+		public double setFsa
+		{
+			set
+			{
+				employeeFsaDouble = value;
+			}
+		}
+		
+		// Accessor Methods
+		public int getEmployeeID()
+		{
+			return employeeIDInteger;
+		}
+		public double getSalary()
+		{
+			return employeeSalaryDouble;
+		}
+		public String getFirstName()
+		{
+			return employeeFirstNameString;
+		}
+		public String getLastName()
+		{
+			return employeeLastNameString;
+		}
+		public String getPosition()
+		{
+			return employeePositionString;
+		}
+		public String getDepartment()
+		{
+			return employeeDepartmentString;
 		}
 	}
 }

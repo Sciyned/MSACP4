@@ -81,7 +81,7 @@ namespace Project4
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(90, 112);
+			this.label4.Location = new System.Drawing.Point(90, 132);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(107, 23);
 			this.label4.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace Project4
 			// label5
 			// 
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(90, 135);
+			this.label5.Location = new System.Drawing.Point(90, 99);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(100, 23);
 			this.label5.TabIndex = 4;
@@ -102,6 +102,7 @@ namespace Project4
 			// 
 			this.timer1.Enabled = true;
 			this.timer1.Interval = 5000;
+			this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
 			// 
 			// SplashForm
 			// 

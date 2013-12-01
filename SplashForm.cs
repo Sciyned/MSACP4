@@ -32,5 +32,10 @@ namespace Project4
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+		
+		void Timer1Tick(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
