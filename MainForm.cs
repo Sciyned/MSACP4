@@ -41,6 +41,15 @@ namespace Project4
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+
+        // Clear deduction checkboxes
+        void clearCheckboxes()
+        {
+            medicalCheckBox.Checked = false;
+            lifeInsuranceCheckBox.Checked = false;
+            fourCheckBox.Checked = false;
+            fsaCheckBox.Checked = false;
+        }
 		
 		void ExitButtonClick(object sender, EventArgs e)
 		{
@@ -145,5 +154,197 @@ namespace Project4
 		{
 			showForm.ShowDialog();
 		}
+
+        private void employeeIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Change other form components when this is changed
+            int indexInt = employeeIDComboBox.SelectedIndex;
+
+            employeeFirstNameComboBox.SelectedIndex = indexInt;
+            employeeLastNameComboBox.SelectedIndex = indexInt;
+            
+            // Select proper position
+            if (employeeArray[indexInt].Position == "Manager")
+            {
+                positionComboBox.SelectedIndex = 0;
+                salaryRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Engineer")
+            {
+                positionComboBox.SelectedIndex = 1;
+                salaryRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Technician")
+            {
+                positionComboBox.SelectedIndex = 2;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Clerk")
+            {
+                positionComboBox.SelectedIndex = 3;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Production")
+            {
+                positionComboBox.SelectedIndex = 4;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            
+            // Select proper department
+            if (employeeArray[indexInt].Department == "HR")
+                departmentComboBox.SelectedIndex = 0;
+            else if (employeeArray[indexInt].Department == "Accounting")
+                departmentComboBox.SelectedIndex = 1;
+            else if (employeeArray[indexInt].Department == "R&D")
+                departmentComboBox.SelectedIndex = 2;
+            else if (employeeArray[indexInt].Department == "Sales")
+                departmentComboBox.SelectedIndex = 3;
+            else if (employeeArray[indexInt].Department == "Production")
+                departmentComboBox.SelectedIndex = 4;
+
+            // Check proper deductions
+            clearCheckboxes();
+            if (employeeArray[indexInt].Insurance != 0.0)
+                medicalCheckBox.Checked = true;
+            if (employeeArray[indexInt].LifeInsurance != 0.0)
+                lifeInsuranceCheckBox.Checked = true;
+            if (employeeArray[indexInt].Retirement != 0.0)
+                fourCheckBox.Checked = true;
+            if (employeeArray[indexInt].FSA != 0.0)
+                fsaCheckBox.Checked = true;
+        }
+
+        private void employeeFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Change other form components when this is changed
+            int indexInt = employeeFirstNameComboBox.SelectedIndex;
+
+            employeeIDComboBox.SelectedIndex = indexInt;
+            employeeLastNameComboBox.SelectedIndex = indexInt;
+
+            // Select proper position
+            if (employeeArray[indexInt].Position == "Manager")
+            {
+                positionComboBox.SelectedIndex = 0;
+                salaryRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Engineer")
+            {
+                positionComboBox.SelectedIndex = 1;
+                salaryRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Technician")
+            {
+                positionComboBox.SelectedIndex = 2;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Clerk")
+            {
+                positionComboBox.SelectedIndex = 3;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Production")
+            {
+                positionComboBox.SelectedIndex = 4;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+
+            // Select proper department
+            if (employeeArray[indexInt].Department == "HR")
+                departmentComboBox.SelectedIndex = 0;
+            else if (employeeArray[indexInt].Department == "Accounting")
+                departmentComboBox.SelectedIndex = 1;
+            else if (employeeArray[indexInt].Department == "R&D")
+                departmentComboBox.SelectedIndex = 2;
+            else if (employeeArray[indexInt].Department == "Sales")
+                departmentComboBox.SelectedIndex = 3;
+            else if (employeeArray[indexInt].Department == "Production")
+                departmentComboBox.SelectedIndex = 4;
+
+            // Check proper deductions
+            clearCheckboxes();
+            if (employeeArray[indexInt].Insurance != 0.0)
+                medicalCheckBox.Checked = true;
+            if (employeeArray[indexInt].LifeInsurance != 0.0)
+                lifeInsuranceCheckBox.Checked = true;
+            if (employeeArray[indexInt].Retirement != 0.0)
+                fourCheckBox.Checked = true;
+            if (employeeArray[indexInt].FSA != 0.0)
+                fsaCheckBox.Checked = true;
+        }
+
+        private void employeeLastNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Change other form components when this is changed
+            int indexInt = employeeLastNameComboBox.SelectedIndex;
+
+            employeeFirstNameComboBox.SelectedIndex = indexInt;
+            employeeIDComboBox.SelectedIndex = indexInt;
+
+            // Select proper position
+            if (employeeArray[indexInt].Position == "Manager")
+            {
+                positionComboBox.SelectedIndex = 0;
+                salaryRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Engineer")
+            {
+                positionComboBox.SelectedIndex = 1;
+                salaryRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Technician")
+            {
+                positionComboBox.SelectedIndex = 2;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Clerk")
+            {
+                positionComboBox.SelectedIndex = 3;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+            else if (employeeArray[indexInt].Position == "Production")
+            {
+                positionComboBox.SelectedIndex = 4;
+                hourlyRadioButton.Checked = true;
+                rateTextField.Text = employeeArray[indexInt].Salary.ToString();
+            }
+
+            // Select proper department
+            if (employeeArray[indexInt].Department == "HR")
+                departmentComboBox.SelectedIndex = 0;
+            else if (employeeArray[indexInt].Department == "Accounting")
+                departmentComboBox.SelectedIndex = 1;
+            else if (employeeArray[indexInt].Department == "R&D")
+                departmentComboBox.SelectedIndex = 2;
+            else if (employeeArray[indexInt].Department == "Sales")
+                departmentComboBox.SelectedIndex = 3;
+            else if (employeeArray[indexInt].Department == "Production")
+                departmentComboBox.SelectedIndex = 4;
+
+            // Check proper deductions
+            clearCheckboxes();
+            if (employeeArray[indexInt].Insurance != 0.0)
+                medicalCheckBox.Checked = true;
+            if (employeeArray[indexInt].LifeInsurance != 0.0)
+                lifeInsuranceCheckBox.Checked = true;
+            if (employeeArray[indexInt].Retirement != 0.0)
+                fourCheckBox.Checked = true;
+            if (employeeArray[indexInt].FSA != 0.0)
+                fsaCheckBox.Checked = true;
+        }
 	}
 }
