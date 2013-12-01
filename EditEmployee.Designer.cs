@@ -43,11 +43,15 @@ namespace Project4
 			this.label1 = new System.Windows.Forms.Label();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
 			this.updateEmployeeInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+=======
+			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.employeeIDComboBox = new System.Windows.Forms.ComboBox();
 			this.basicGroupBox = new System.Windows.Forms.GroupBox();
 			this.employeeLastNameTextField = new System.Windows.Forms.TextBox();
@@ -63,24 +67,53 @@ namespace Project4
 			this.groupBox7 = new System.Windows.Forms.GroupBox();
 			this.newFsaTextField = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+			this.oldFsaTextField = new System.Windows.Forms.TextBox();
+			this.label12 = new System.Windows.Forms.Label();
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.fsaCheckBox = new System.Windows.Forms.CheckBox();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
 			this.newRetirementTextField = new System.Windows.Forms.TextBox();
 			this.label11 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+			this.oldRetirementTextField = new System.Windows.Forms.TextBox();
+			this.label10 = new System.Windows.Forms.Label();
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.retirementCheckBox = new System.Windows.Forms.CheckBox();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
 			this.newLifeInsuranceTextField = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+			this.oldLifeInsuranceTextField = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.lifeInsuranceCheckBox = new System.Windows.Forms.CheckBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.newMedicalTextField = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+			this.oldMedicalTextField = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.medicalInsuranceCheckBox = new System.Windows.Forms.CheckBox();
 			this.financialGroupBox = new System.Windows.Forms.GroupBox();
 			this.newRateTextField = new System.Windows.Forms.TextBox();
 			this.label17 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
 			this.newHoursTextField = new System.Windows.Forms.TextBox();
 			this.label15 = new System.Windows.Forms.Label();
+=======
+			this.oldRateTextField = new System.Windows.Forms.TextBox();
+			this.label16 = new System.Windows.Forms.Label();
+			this.newHoursTextField = new System.Windows.Forms.TextBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.originalHoursTextField = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.hourlyRadioButton = new System.Windows.Forms.RadioButton();
 			this.salaryRadioButton = new System.Windows.Forms.RadioButton();
 			this.updateButton = new System.Windows.Forms.Button();
@@ -117,14 +150,18 @@ namespace Project4
 			// 
 			// fileToolStripMenuItem
 			// 
+<<<<<<< HEAD
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.updateEmployeeInformationToolStripMenuItem,
 									this.toolStripSeparator1,
 									this.exitToolStripMenuItem});
+=======
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "&File";
 			// 
+<<<<<<< HEAD
 			// updateEmployeeInformationToolStripMenuItem
 			// 
 			this.updateEmployeeInformationToolStripMenuItem.Name = "updateEmployeeInformationToolStripMenuItem";
@@ -147,10 +184,15 @@ namespace Project4
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.helpToolStripMenuItem1});
+=======
+			// helpToolStripMenuItem
+			// 
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "&Help";
 			// 
+<<<<<<< HEAD
 			// helpToolStripMenuItem1
 			// 
 			this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
@@ -158,6 +200,8 @@ namespace Project4
 			this.helpToolStripMenuItem1.Text = "&Help";
 			this.helpToolStripMenuItem1.Click += new System.EventHandler(this.HelpToolStripMenuItem1Click);
 			// 
+=======
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			// employeeIDComboBox
 			// 
 			this.employeeIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -267,7 +311,11 @@ namespace Project4
 			this.deductionsGroupBox.Enabled = false;
 			this.deductionsGroupBox.Location = new System.Drawing.Point(291, 35);
 			this.deductionsGroupBox.Name = "deductionsGroupBox";
+<<<<<<< HEAD
 			this.deductionsGroupBox.Size = new System.Drawing.Size(330, 272);
+=======
+			this.deductionsGroupBox.Size = new System.Drawing.Size(330, 387);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.deductionsGroupBox.TabIndex = 7;
 			this.deductionsGroupBox.TabStop = false;
 			this.deductionsGroupBox.Text = "Deductions";
@@ -276,10 +324,19 @@ namespace Project4
 			// 
 			this.groupBox7.Controls.Add(this.newFsaTextField);
 			this.groupBox7.Controls.Add(this.label13);
+<<<<<<< HEAD
 			this.groupBox7.Controls.Add(this.fsaCheckBox);
 			this.groupBox7.Location = new System.Drawing.Point(169, 139);
 			this.groupBox7.Name = "groupBox7";
 			this.groupBox7.Size = new System.Drawing.Size(155, 113);
+=======
+			this.groupBox7.Controls.Add(this.oldFsaTextField);
+			this.groupBox7.Controls.Add(this.label12);
+			this.groupBox7.Controls.Add(this.fsaCheckBox);
+			this.groupBox7.Location = new System.Drawing.Point(169, 208);
+			this.groupBox7.Name = "groupBox7";
+			this.groupBox7.Size = new System.Drawing.Size(155, 173);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.groupBox7.TabIndex = 3;
 			this.groupBox7.TabStop = false;
 			this.groupBox7.Text = "Flexible Spending Account";
@@ -287,18 +344,46 @@ namespace Project4
 			// newFsaTextField
 			// 
 			this.newFsaTextField.Enabled = false;
+<<<<<<< HEAD
 			this.newFsaTextField.Location = new System.Drawing.Point(7, 75);
+=======
+			this.newFsaTextField.Location = new System.Drawing.Point(7, 132);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.newFsaTextField.Name = "newFsaTextField";
 			this.newFsaTextField.Size = new System.Drawing.Size(133, 20);
 			this.newFsaTextField.TabIndex = 4;
 			// 
 			// label13
 			// 
+<<<<<<< HEAD
 			this.label13.Location = new System.Drawing.Point(7, 48);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(100, 23);
 			this.label13.TabIndex = 3;
 			this.label13.Text = "Amount:";
+=======
+			this.label13.Location = new System.Drawing.Point(7, 105);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(100, 23);
+			this.label13.TabIndex = 3;
+			this.label13.Text = "New Amount:";
+			// 
+			// oldFsaTextField
+			// 
+			this.oldFsaTextField.Location = new System.Drawing.Point(7, 78);
+			this.oldFsaTextField.Name = "oldFsaTextField";
+			this.oldFsaTextField.ReadOnly = true;
+			this.oldFsaTextField.Size = new System.Drawing.Size(133, 20);
+			this.oldFsaTextField.TabIndex = 2;
+			// 
+			// label12
+			// 
+			this.label12.Location = new System.Drawing.Point(7, 51);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(100, 23);
+			this.label12.TabIndex = 1;
+			this.label12.Text = "Original Value:";
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			// 
 			// fsaCheckBox
 			// 
@@ -313,10 +398,19 @@ namespace Project4
 			// 
 			this.groupBox6.Controls.Add(this.newRetirementTextField);
 			this.groupBox6.Controls.Add(this.label11);
+<<<<<<< HEAD
 			this.groupBox6.Controls.Add(this.retirementCheckBox);
 			this.groupBox6.Location = new System.Drawing.Point(7, 139);
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.Size = new System.Drawing.Size(156, 113);
+=======
+			this.groupBox6.Controls.Add(this.oldRetirementTextField);
+			this.groupBox6.Controls.Add(this.label10);
+			this.groupBox6.Controls.Add(this.retirementCheckBox);
+			this.groupBox6.Location = new System.Drawing.Point(7, 208);
+			this.groupBox6.Name = "groupBox6";
+			this.groupBox6.Size = new System.Drawing.Size(156, 173);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.groupBox6.TabIndex = 2;
 			this.groupBox6.TabStop = false;
 			this.groupBox6.Text = "401K/Retirement";
@@ -324,18 +418,46 @@ namespace Project4
 			// newRetirementTextField
 			// 
 			this.newRetirementTextField.Enabled = false;
+<<<<<<< HEAD
 			this.newRetirementTextField.Location = new System.Drawing.Point(7, 75);
+=======
+			this.newRetirementTextField.Location = new System.Drawing.Point(7, 132);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.newRetirementTextField.Name = "newRetirementTextField";
 			this.newRetirementTextField.Size = new System.Drawing.Size(135, 20);
 			this.newRetirementTextField.TabIndex = 4;
 			// 
 			// label11
 			// 
+<<<<<<< HEAD
 			this.label11.Location = new System.Drawing.Point(7, 48);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(100, 23);
 			this.label11.TabIndex = 3;
 			this.label11.Text = "Amount:";
+=======
+			this.label11.Location = new System.Drawing.Point(7, 105);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(100, 23);
+			this.label11.TabIndex = 3;
+			this.label11.Text = "New Amount:";
+			// 
+			// oldRetirementTextField
+			// 
+			this.oldRetirementTextField.Location = new System.Drawing.Point(7, 78);
+			this.oldRetirementTextField.Name = "oldRetirementTextField";
+			this.oldRetirementTextField.ReadOnly = true;
+			this.oldRetirementTextField.Size = new System.Drawing.Size(135, 20);
+			this.oldRetirementTextField.TabIndex = 2;
+			// 
+			// label10
+			// 
+			this.label10.Location = new System.Drawing.Point(7, 51);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(100, 23);
+			this.label10.TabIndex = 1;
+			this.label10.Text = "Original Value:";
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			// 
 			// retirementCheckBox
 			// 
@@ -350,10 +472,19 @@ namespace Project4
 			// 
 			this.groupBox5.Controls.Add(this.newLifeInsuranceTextField);
 			this.groupBox5.Controls.Add(this.label9);
+<<<<<<< HEAD
 			this.groupBox5.Controls.Add(this.lifeInsuranceCheckBox);
 			this.groupBox5.Location = new System.Drawing.Point(169, 20);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Size = new System.Drawing.Size(155, 109);
+=======
+			this.groupBox5.Controls.Add(this.oldLifeInsuranceTextField);
+			this.groupBox5.Controls.Add(this.label8);
+			this.groupBox5.Controls.Add(this.lifeInsuranceCheckBox);
+			this.groupBox5.Location = new System.Drawing.Point(169, 20);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(155, 181);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.groupBox5.TabIndex = 1;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Life Insurance";
@@ -361,18 +492,46 @@ namespace Project4
 			// newLifeInsuranceTextField
 			// 
 			this.newLifeInsuranceTextField.Enabled = false;
+<<<<<<< HEAD
 			this.newLifeInsuranceTextField.Location = new System.Drawing.Point(7, 70);
+=======
+			this.newLifeInsuranceTextField.Location = new System.Drawing.Point(7, 128);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.newLifeInsuranceTextField.Name = "newLifeInsuranceTextField";
 			this.newLifeInsuranceTextField.Size = new System.Drawing.Size(133, 20);
 			this.newLifeInsuranceTextField.TabIndex = 4;
 			// 
 			// label9
 			// 
+<<<<<<< HEAD
 			this.label9.Location = new System.Drawing.Point(7, 47);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(100, 23);
 			this.label9.TabIndex = 3;
 			this.label9.Text = "Amount:";
+=======
+			this.label9.Location = new System.Drawing.Point(7, 105);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(100, 23);
+			this.label9.TabIndex = 3;
+			this.label9.Text = "New Amount:";
+			// 
+			// oldLifeInsuranceTextField
+			// 
+			this.oldLifeInsuranceTextField.Location = new System.Drawing.Point(7, 78);
+			this.oldLifeInsuranceTextField.Name = "oldLifeInsuranceTextField";
+			this.oldLifeInsuranceTextField.ReadOnly = true;
+			this.oldLifeInsuranceTextField.Size = new System.Drawing.Size(133, 20);
+			this.oldLifeInsuranceTextField.TabIndex = 2;
+			// 
+			// label8
+			// 
+			this.label8.Location = new System.Drawing.Point(7, 51);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(100, 23);
+			this.label8.TabIndex = 1;
+			this.label8.Text = "Original Value:";
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			// 
 			// lifeInsuranceCheckBox
 			// 
@@ -387,10 +546,19 @@ namespace Project4
 			// 
 			this.groupBox4.Controls.Add(this.newMedicalTextField);
 			this.groupBox4.Controls.Add(this.label7);
+<<<<<<< HEAD
 			this.groupBox4.Controls.Add(this.medicalInsuranceCheckBox);
 			this.groupBox4.Location = new System.Drawing.Point(7, 20);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(156, 109);
+=======
+			this.groupBox4.Controls.Add(this.oldMedicalTextField);
+			this.groupBox4.Controls.Add(this.label6);
+			this.groupBox4.Controls.Add(this.medicalInsuranceCheckBox);
+			this.groupBox4.Location = new System.Drawing.Point(7, 20);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(156, 181);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.groupBox4.TabIndex = 0;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Medical/Dental";
@@ -398,18 +566,46 @@ namespace Project4
 			// newMedicalTextField
 			// 
 			this.newMedicalTextField.Enabled = false;
+<<<<<<< HEAD
 			this.newMedicalTextField.Location = new System.Drawing.Point(7, 70);
+=======
+			this.newMedicalTextField.Location = new System.Drawing.Point(7, 128);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.newMedicalTextField.Name = "newMedicalTextField";
 			this.newMedicalTextField.Size = new System.Drawing.Size(135, 20);
 			this.newMedicalTextField.TabIndex = 4;
 			// 
 			// label7
 			// 
+<<<<<<< HEAD
 			this.label7.Location = new System.Drawing.Point(7, 47);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(100, 23);
 			this.label7.TabIndex = 3;
 			this.label7.Text = "Amount:";
+=======
+			this.label7.Location = new System.Drawing.Point(7, 105);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(100, 23);
+			this.label7.TabIndex = 3;
+			this.label7.Text = "New Amount:";
+			// 
+			// oldMedicalTextField
+			// 
+			this.oldMedicalTextField.Location = new System.Drawing.Point(7, 78);
+			this.oldMedicalTextField.Name = "oldMedicalTextField";
+			this.oldMedicalTextField.ReadOnly = true;
+			this.oldMedicalTextField.Size = new System.Drawing.Size(135, 20);
+			this.oldMedicalTextField.TabIndex = 2;
+			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(7, 51);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(100, 23);
+			this.label6.TabIndex = 1;
+			this.label6.Text = "Original Value:";
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			// 
 			// medicalInsuranceCheckBox
 			// 
@@ -424,27 +620,45 @@ namespace Project4
 			// 
 			this.financialGroupBox.Controls.Add(this.newRateTextField);
 			this.financialGroupBox.Controls.Add(this.label17);
+<<<<<<< HEAD
 			this.financialGroupBox.Controls.Add(this.newHoursTextField);
 			this.financialGroupBox.Controls.Add(this.label15);
+=======
+			this.financialGroupBox.Controls.Add(this.oldRateTextField);
+			this.financialGroupBox.Controls.Add(this.label16);
+			this.financialGroupBox.Controls.Add(this.newHoursTextField);
+			this.financialGroupBox.Controls.Add(this.label15);
+			this.financialGroupBox.Controls.Add(this.originalHoursTextField);
+			this.financialGroupBox.Controls.Add(this.label14);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.financialGroupBox.Controls.Add(this.hourlyRadioButton);
 			this.financialGroupBox.Controls.Add(this.salaryRadioButton);
 			this.financialGroupBox.Enabled = false;
 			this.financialGroupBox.Location = new System.Drawing.Point(12, 244);
 			this.financialGroupBox.Name = "financialGroupBox";
+<<<<<<< HEAD
 			this.financialGroupBox.Size = new System.Drawing.Size(263, 105);
+=======
+			this.financialGroupBox.Size = new System.Drawing.Size(263, 178);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.financialGroupBox.TabIndex = 8;
 			this.financialGroupBox.TabStop = false;
 			this.financialGroupBox.Text = "Financial Information";
 			// 
 			// newRateTextField
 			// 
+<<<<<<< HEAD
 			this.newRateTextField.Location = new System.Drawing.Point(101, 69);
+=======
+			this.newRateTextField.Location = new System.Drawing.Point(97, 140);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.newRateTextField.Name = "newRateTextField";
 			this.newRateTextField.Size = new System.Drawing.Size(100, 20);
 			this.newRateTextField.TabIndex = 10;
 			// 
 			// label17
 			// 
+<<<<<<< HEAD
 			this.label17.Location = new System.Drawing.Point(12, 69);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(100, 23);
@@ -454,17 +668,68 @@ namespace Project4
 			// newHoursTextField
 			// 
 			this.newHoursTextField.Location = new System.Drawing.Point(101, 43);
+=======
+			this.label17.Location = new System.Drawing.Point(8, 140);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(100, 23);
+			this.label17.TabIndex = 9;
+			this.label17.Text = "New Rate:";
+			// 
+			// oldRateTextField
+			// 
+			this.oldRateTextField.Location = new System.Drawing.Point(97, 110);
+			this.oldRateTextField.Name = "oldRateTextField";
+			this.oldRateTextField.ReadOnly = true;
+			this.oldRateTextField.Size = new System.Drawing.Size(100, 20);
+			this.oldRateTextField.TabIndex = 8;
+			// 
+			// label16
+			// 
+			this.label16.Location = new System.Drawing.Point(8, 113);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(100, 23);
+			this.label16.TabIndex = 7;
+			this.label16.Text = "Original Rate:";
+			// 
+			// newHoursTextField
+			// 
+			this.newHoursTextField.Location = new System.Drawing.Point(97, 74);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.newHoursTextField.Name = "newHoursTextField";
 			this.newHoursTextField.Size = new System.Drawing.Size(100, 20);
 			this.newHoursTextField.TabIndex = 6;
 			// 
 			// label15
 			// 
+<<<<<<< HEAD
 			this.label15.Location = new System.Drawing.Point(12, 46);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(100, 23);
 			this.label15.TabIndex = 5;
 			this.label15.Text = "Hours:";
+=======
+			this.label15.Location = new System.Drawing.Point(8, 77);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(100, 23);
+			this.label15.TabIndex = 5;
+			this.label15.Text = "New Hours:";
+			// 
+			// originalHoursTextField
+			// 
+			this.originalHoursTextField.Location = new System.Drawing.Point(97, 47);
+			this.originalHoursTextField.Name = "originalHoursTextField";
+			this.originalHoursTextField.ReadOnly = true;
+			this.originalHoursTextField.Size = new System.Drawing.Size(100, 20);
+			this.originalHoursTextField.TabIndex = 4;
+			// 
+			// label14
+			// 
+			this.label14.Location = new System.Drawing.Point(8, 50);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(100, 23);
+			this.label14.TabIndex = 3;
+			this.label14.Text = "Original Hours:";
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			// 
 			// hourlyRadioButton
 			// 
@@ -488,18 +753,30 @@ namespace Project4
 			// 
 			// updateButton
 			// 
+<<<<<<< HEAD
 			this.updateButton.Location = new System.Drawing.Point(291, 313);
 			this.updateButton.Name = "updateButton";
 			this.updateButton.Size = new System.Drawing.Size(163, 23);
+=======
+			this.updateButton.Location = new System.Drawing.Point(72, 438);
+			this.updateButton.Name = "updateButton";
+			this.updateButton.Size = new System.Drawing.Size(185, 23);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.updateButton.TabIndex = 9;
 			this.updateButton.Text = "&Update Employee Information";
 			this.updateButton.UseVisualStyleBackColor = true;
 			// 
 			// cancelButton
 			// 
+<<<<<<< HEAD
 			this.cancelButton.Location = new System.Drawing.Point(460, 313);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(161, 23);
+=======
+			this.cancelButton.Location = new System.Drawing.Point(305, 438);
+			this.cancelButton.Name = "cancelButton";
+			this.cancelButton.Size = new System.Drawing.Size(185, 23);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.cancelButton.TabIndex = 10;
 			this.cancelButton.Text = "&Cancel";
 			this.cancelButton.UseVisualStyleBackColor = true;
@@ -508,7 +785,11 @@ namespace Project4
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 			this.ClientSize = new System.Drawing.Size(633, 362);
+=======
+			this.ClientSize = new System.Drawing.Size(633, 473);
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.updateButton);
 			this.Controls.Add(this.financialGroupBox);
@@ -542,6 +823,7 @@ namespace Project4
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+<<<<<<< HEAD
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -552,21 +834,53 @@ namespace Project4
 		private System.Windows.Forms.TextBox newRateTextField;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.TextBox newHoursTextField;
+=======
+		private System.Windows.Forms.Button cancelButton;
+		private System.Windows.Forms.Button updateButton;
+		private System.Windows.Forms.TextBox oldRateTextField;
+		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.TextBox newRateTextField;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.TextBox originalHoursTextField;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.TextBox newHoursTextField;
+		private System.Windows.Forms.Label label16;
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 		private System.Windows.Forms.RadioButton salaryRadioButton;
 		private System.Windows.Forms.RadioButton hourlyRadioButton;
 		private System.Windows.Forms.GroupBox financialGroupBox;
 		private System.Windows.Forms.CheckBox retirementCheckBox;
+<<<<<<< HEAD
+=======
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.TextBox oldRetirementTextField;
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TextBox newRetirementTextField;
 		private System.Windows.Forms.GroupBox groupBox6;
 		private System.Windows.Forms.CheckBox fsaCheckBox;
+<<<<<<< HEAD
+=======
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.TextBox oldFsaTextField;
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.TextBox newFsaTextField;
 		private System.Windows.Forms.GroupBox groupBox7;
 		private System.Windows.Forms.CheckBox lifeInsuranceCheckBox;
+<<<<<<< HEAD
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox newLifeInsuranceTextField;
 		private System.Windows.Forms.CheckBox medicalInsuranceCheckBox;
+=======
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.TextBox oldLifeInsuranceTextField;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.TextBox newLifeInsuranceTextField;
+		private System.Windows.Forms.CheckBox medicalInsuranceCheckBox;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.TextBox oldMedicalTextField;
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TextBox newMedicalTextField;
 		private System.Windows.Forms.GroupBox groupBox4;

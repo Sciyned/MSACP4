@@ -24,4 +24,7 @@ C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.Ed
 C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.PayrollMainForm.resources
 C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.SplashForm.resources
 C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 E:\C#Dev\Project4\obj\Debug\Project4.AboutMainForm.resources
+=======
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7

@@ -47,10 +47,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AboutMainForm.cs" />
     <Compile Include="AboutMainForm.Designer.cs">
       <DependentUpon>AboutMainForm.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
     <Compile Include="Accounts.cs" />
     <Compile Include="Calculations.cs" />
     <Compile Include="DataProcessing.cs" />
@@ -60,10 +63,14 @@
     <Compile Include="EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="EditHelp.cs" />
     <Compile Include="EditHelp.Designer.cs">
       <DependentUpon>EditHelp.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Employee.cs" />
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +87,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="AboutMainForm.resx">
       <DependentUpon>AboutMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +97,11 @@
     <EmbeddedResource Include="EditHelp.resx">
       <DependentUpon>EditHelp.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="EditEmployee.resx">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

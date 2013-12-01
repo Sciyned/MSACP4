@@ -346,6 +346,7 @@ namespace Project4
             if (employeeArray[indexInt].FSA != 0.0)
                 fsaCheckBox.Checked = true;
         }
+<<<<<<< HEAD
 		
 		void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
@@ -354,5 +355,7 @@ namespace Project4
 			
 			showForm.ShowDialog();
 		}
+=======
+>>>>>>> 66872ad6c547cf3fb10a7995613a093fc56e4bd7
 	}
 }
