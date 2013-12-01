@@ -48,5 +48,10 @@ namespace Project4
 		{
 			hoursTextField.Enabled = true;
 		}
+		
+		void PayrollMainFormLoad(object sender, EventArgs e)
+		{
+			DataProcessing LoadData = new DataProcessing();
+		}
 	}
 }

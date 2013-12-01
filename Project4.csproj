@@ -47,6 +47,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounts.cs" />
+    <Compile Include="Calculations.cs" />
+    <Compile Include="DataProcessing.cs" />
+    <Compile Include="EditEmployee.cs" />
+    <Compile Include="EditEmployee.Designer.cs">
+      <DependentUpon>EditEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -56,7 +56,6 @@ namespace Project4
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.updateEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -69,9 +68,6 @@ namespace Project4
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.positionLabel = new System.Windows.Forms.Label();
-			this.employeeIDTextBox = new System.Windows.Forms.TextBox();
-			this.firstNameTextBox = new System.Windows.Forms.TextBox();
-			this.lastNameTextBox = new System.Windows.Forms.TextBox();
 			this.departmentComboBox = new System.Windows.Forms.ComboBox();
 			this.positionComboBox = new System.Windows.Forms.ComboBox();
 			this.basicInfoGroupBox = new System.Windows.Forms.GroupBox();
@@ -91,12 +87,14 @@ namespace Project4
 			this.monthGroupBox = new System.Windows.Forms.GroupBox();
 			this.monthComboBox = new System.Windows.Forms.ComboBox();
 			this.monthLabel = new System.Windows.Forms.Label();
-			this.addButton = new System.Windows.Forms.Button();
 			this.updateButton = new System.Windows.Forms.Button();
 			this.removeButton = new System.Windows.Forms.Button();
 			this.printButton = new System.Windows.Forms.Button();
 			this.exitButton = new System.Windows.Forms.Button();
 			this.clearButton = new System.Windows.Forms.Button();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.comboBox3 = new System.Windows.Forms.ComboBox();
 			this.menuStrip1.SuspendLayout();
 			this.basicInfoGroupBox.SuspendLayout();
 			this.addInfoGroupBox.SuspendLayout();
@@ -222,7 +220,6 @@ namespace Project4
 			// editToolStripMenuItem
 			// 
 			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.addEmployeeToolStripMenuItem,
 									this.updateEmployeeToolStripMenuItem,
 									this.removeEmployeeToolStripMenuItem,
 									this.toolStripSeparator3,
@@ -232,12 +229,6 @@ namespace Project4
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
 			this.editToolStripMenuItem.Text = "&Edit";
-			// 
-			// addEmployeeToolStripMenuItem
-			// 
-			this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-			this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.addEmployeeToolStripMenuItem.Text = "&Add Employee";
 			// 
 			// updateEmployeeToolStripMenuItem
 			// 
@@ -316,28 +307,6 @@ namespace Project4
 			this.positionLabel.TabIndex = 6;
 			this.positionLabel.Text = "Position:";
 			// 
-			// employeeIDTextBox
-			// 
-			this.employeeIDTextBox.Location = new System.Drawing.Point(79, 22);
-			this.employeeIDTextBox.MaxLength = 4;
-			this.employeeIDTextBox.Name = "employeeIDTextBox";
-			this.employeeIDTextBox.Size = new System.Drawing.Size(137, 20);
-			this.employeeIDTextBox.TabIndex = 7;
-			// 
-			// firstNameTextBox
-			// 
-			this.firstNameTextBox.Location = new System.Drawing.Point(79, 76);
-			this.firstNameTextBox.Name = "firstNameTextBox";
-			this.firstNameTextBox.Size = new System.Drawing.Size(137, 20);
-			this.firstNameTextBox.TabIndex = 8;
-			// 
-			// lastNameTextBox
-			// 
-			this.lastNameTextBox.Location = new System.Drawing.Point(79, 107);
-			this.lastNameTextBox.Name = "lastNameTextBox";
-			this.lastNameTextBox.Size = new System.Drawing.Size(137, 20);
-			this.lastNameTextBox.TabIndex = 9;
-			// 
 			// departmentComboBox
 			// 
 			this.departmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -370,13 +339,13 @@ namespace Project4
 			// 
 			// basicInfoGroupBox
 			// 
+			this.basicInfoGroupBox.Controls.Add(this.comboBox3);
+			this.basicInfoGroupBox.Controls.Add(this.comboBox2);
+			this.basicInfoGroupBox.Controls.Add(this.comboBox1);
 			this.basicInfoGroupBox.Controls.Add(this.employeeIDLabel);
-			this.basicInfoGroupBox.Controls.Add(this.employeeIDTextBox);
 			this.basicInfoGroupBox.Controls.Add(this.label2);
 			this.basicInfoGroupBox.Controls.Add(this.firstNameLabel);
-			this.basicInfoGroupBox.Controls.Add(this.lastNameTextBox);
 			this.basicInfoGroupBox.Controls.Add(this.lastNameLabel);
-			this.basicInfoGroupBox.Controls.Add(this.firstNameTextBox);
 			this.basicInfoGroupBox.Location = new System.Drawing.Point(12, 85);
 			this.basicInfoGroupBox.Name = "basicInfoGroupBox";
 			this.basicInfoGroupBox.Size = new System.Drawing.Size(317, 144);
@@ -554,18 +523,9 @@ namespace Project4
 			this.monthLabel.TabIndex = 0;
 			this.monthLabel.Text = "Month:";
 			// 
-			// addButton
-			// 
-			this.addButton.Location = new System.Drawing.Point(19, 489);
-			this.addButton.Name = "addButton";
-			this.addButton.Size = new System.Drawing.Size(137, 30);
-			this.addButton.TabIndex = 18;
-			this.addButton.Text = "&Add Employee";
-			this.addButton.UseVisualStyleBackColor = true;
-			// 
 			// updateButton
 			// 
-			this.updateButton.Location = new System.Drawing.Point(19, 525);
+			this.updateButton.Location = new System.Drawing.Point(19, 501);
 			this.updateButton.Name = "updateButton";
 			this.updateButton.Size = new System.Drawing.Size(137, 30);
 			this.updateButton.TabIndex = 19;
@@ -574,7 +534,7 @@ namespace Project4
 			// 
 			// removeButton
 			// 
-			this.removeButton.Location = new System.Drawing.Point(19, 561);
+			this.removeButton.Location = new System.Drawing.Point(19, 537);
 			this.removeButton.Name = "removeButton";
 			this.removeButton.Size = new System.Drawing.Size(137, 30);
 			this.removeButton.TabIndex = 20;
@@ -609,6 +569,33 @@ namespace Project4
 			this.clearButton.Text = "&Clear Fields";
 			this.clearButton.UseVisualStyleBackColor = true;
 			// 
+			// comboBox1
+			// 
+			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(95, 25);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(121, 21);
+			this.comboBox1.TabIndex = 5;
+			// 
+			// comboBox2
+			// 
+			this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Location = new System.Drawing.Point(95, 76);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(121, 21);
+			this.comboBox2.TabIndex = 6;
+			// 
+			// comboBox3
+			// 
+			this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox3.FormattingEnabled = true;
+			this.comboBox3.Location = new System.Drawing.Point(95, 110);
+			this.comboBox3.Name = "comboBox3";
+			this.comboBox3.Size = new System.Drawing.Size(121, 21);
+			this.comboBox3.TabIndex = 7;
+			// 
 			// PayrollMainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,7 +606,6 @@ namespace Project4
 			this.Controls.Add(this.printButton);
 			this.Controls.Add(this.removeButton);
 			this.Controls.Add(this.updateButton);
-			this.Controls.Add(this.addButton);
 			this.Controls.Add(this.monthGroupBox);
 			this.Controls.Add(this.financialInfoGroupBox);
 			this.Controls.Add(this.addInfoGroupBox);
@@ -628,10 +614,10 @@ namespace Project4
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "PayrollMainForm";
 			this.Text = "Payroll Application";
+			this.Load += new System.EventHandler(this.PayrollMainFormLoad);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.basicInfoGroupBox.ResumeLayout(false);
-			this.basicInfoGroupBox.PerformLayout();
 			this.addInfoGroupBox.ResumeLayout(false);
 			this.financialInfoGroupBox.ResumeLayout(false);
 			this.financialInfoGroupBox.PerformLayout();
@@ -640,12 +626,14 @@ namespace Project4
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.ComboBox comboBox3;
 		private System.Windows.Forms.Button clearButton;
 		private System.Windows.Forms.Button exitButton;
 		private System.Windows.Forms.Button printButton;
 		private System.Windows.Forms.Button removeButton;
 		private System.Windows.Forms.Button updateButton;
-		private System.Windows.Forms.Button addButton;
 		private System.Windows.Forms.Label monthLabel;
 		private System.Windows.Forms.ComboBox monthComboBox;
 		private System.Windows.Forms.GroupBox monthGroupBox;
@@ -665,9 +653,6 @@ namespace Project4
 		private System.Windows.Forms.GroupBox basicInfoGroupBox;
 		private System.Windows.Forms.ComboBox positionComboBox;
 		private System.Windows.Forms.ComboBox departmentComboBox;
-		private System.Windows.Forms.TextBox lastNameTextBox;
-		private System.Windows.Forms.TextBox firstNameTextBox;
-		private System.Windows.Forms.TextBox employeeIDTextBox;
 		private System.Windows.Forms.Label positionLabel;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -680,7 +665,6 @@ namespace Project4
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripMenuItem removeEmployeeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem updateEmployeeToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
