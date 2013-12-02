@@ -12,6 +12,8 @@
 
 using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace Project4
 {
@@ -25,6 +27,7 @@ namespace Project4
     public class DataProcessing
     {
         private string dataFileString;
+        private bool readFileBool;
         private StreamReader dataReader;
         private StreamWriter dataWriter;
 
@@ -36,7 +39,9 @@ namespace Project4
         public DataProcessing(string file, bool readFile)
         {
             dataFileString = file;
-            if (readFile)
+            readFileBool = readFile;
+
+            if (readFileBool)
             {
                 // Open file for reading
                 dataReader = new StreamReader(dataFileString);
@@ -45,6 +50,41 @@ namespace Project4
             {
                 // Open file for writing
                 dataWriter = new StreamWriter(dataFileString);
+            }
+        }
+
+        // Property methods
+        public string DataFile
+        {
+            get
+            {
+                return dataFileString;
+            }
+            set
+            {
+                dataFileString = value;
+            }
+        }
+
+        public bool ReadFile
+        {
+            get
+            {
+                return readFileBool;
+            }
+            set
+            {
+                readFileBool = value;
+                if (readFileBool)
+                {
+                    // Reading
+                    dataReader = new StreamReader(dataFileString);
+                }
+                else
+                {
+                    // Writing
+                    dataWriter = new StreamWriter(dataFileString);
+                }
             }
         }
 
@@ -83,14 +123,33 @@ namespace Project4
             {
                 // Lines available to read
                 string[] dataPieces = dataReader.ReadLine().Split(' ');
+                List<String> dataList = new List<String>();
 
-                return dataPieces;
+                foreach (string dataPiece in dataPieces)
+                {
+                    // Ignore empty pieces
+                    if (dataPiece != "")
+                    {
+                        dataList.Add(dataPiece);
+                    }
+                }
+
+                return dataList.ToArray();
             }
             else
             {
                 // Return empty string when no more lines are available
                 return new string[0];
             }
+        }
+
+        // Closes the current file
+        public void closeFile()
+        {
+            if (dataReader != null)
+                dataReader.Close();
+            if (dataWriter != null)
+                dataWriter.Close();
         }
     }
 }
