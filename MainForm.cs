@@ -570,5 +570,83 @@ namespace Project4
                 }
             }
         }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Save all files
+            DataProcessing employeeFile = new DataProcessing("data/master.dat", false);
+
+            // Loop through employees and write line to master.dat
+            for (int i = 0; i < employeeCountInt; i++)
+            {
+                // Store temporary data to list
+                List<string> dataList = new List<string>();
+                dataList.Add(employeeArray[i].ID.ToString());
+                dataList.Add(employeeArray[i].FirstName);
+                dataList.Add(employeeArray[i].LastName);
+                dataList.Add(employeeArray[i].Department);
+                dataList.Add(employeeArray[i].Position);
+                dataList.Add(employeeArray[i].Salary.ToString());
+                dataList.Add(employeeArray[i].Insurance.ToString());
+                dataList.Add(employeeArray[i].LifeInsurance.ToString());
+                dataList.Add(employeeArray[i].Retirement.ToString());
+                dataList.Add(employeeArray[i].FSA.ToString());
+                // Write line to file
+                employeeFile.setLine(dataList.ToArray());
+            }
+            // Close employee file
+            employeeFile.closeFile();
+            employeeFile = null;
+
+            // Loop through months
+            int curMonth = 0;
+            while (curMonth < MAX_MONTHS)
+            {
+                DataProcessing monthFile = new DataProcessing();
+                if (curMonth == 0)
+                    monthFile.DataFile = "data/jan.dat";
+                else if (curMonth == 1)
+                    monthFile.DataFile = "data/feb.dat";
+                else if (curMonth == 2)
+                    monthFile.DataFile = "data/mar.dat";
+                else if (curMonth == 3)
+                    monthFile.DataFile = "data/apr.dat";
+                else if (curMonth == 4)
+                    monthFile.DataFile = "data/may.dat";
+                else if (curMonth == 5)
+                    monthFile.DataFile = "data/jun.dat";
+                else if (curMonth == 6)
+                    monthFile.DataFile = "data/jul.dat";
+                else if (curMonth == 7)
+                    monthFile.DataFile = "data/aug.dat";
+                else if (curMonth == 8)
+                    monthFile.DataFile = "data/sep.dat";
+                else if (curMonth == 9)
+                    monthFile.DataFile = "data/oct.dat";
+                else if (curMonth == 10)
+                    monthFile.DataFile = "data/nov.dat";
+                else if (curMonth == 11)
+                    monthFile.DataFile = "data/dec.dat";
+                monthFile.ReadFile = false;
+
+                for (int i = 0; i < monthsArray[curMonth].employeeIds.Length; i++)
+                {
+                    // Store temporary data to list
+                    List<string> dataList = new List<string>();
+                    dataList.Add(monthsArray[curMonth].employeeIds[i].ToString());
+                    dataList.Add(monthsArray[curMonth].employeeHours[i].ToString());
+                    // Write line
+                    monthFile.setLine(dataList.ToArray());
+                }
+                // Close month file
+                monthFile.closeFile();
+                monthFile = null;
+
+                curMonth++;
+            }
+
+            // Success message
+            MessageBox.Show("Saved data files successfully.");
+        }
 	}
 }
