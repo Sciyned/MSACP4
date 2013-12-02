@@ -455,5 +455,23 @@ namespace Project4
                 hoursTextField.Text = empHoursDouble.ToString();
             }
         }
+		
+		void ClearButtonClick(object sender, EventArgs e)
+		{
+			monthComboBox.Text = "";
+			employeeIDComboBox.Text = "";
+			employeeFirstNameComboBox.Text = "";
+			employeeLastNameComboBox.Text = "";
+			positionComboBox.Text = "";
+			departmentComboBox.Text = "";
+			rateTextField.Text = "";
+			hoursTextField.Text = "";
+			medicalCheckBox.Checked = false;
+			fourCheckBox.Checked = false;
+			lifeInsuranceCheckBox.Checked = false;
+			fsaCheckBox.Checked = false;
+			hourlyRadioButton.Checked = false;
+			salaryRadioButton.Checked = false;
+		}
 	}
 }
