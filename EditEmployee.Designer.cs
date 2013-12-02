@@ -166,6 +166,7 @@ namespace Project4
 			this.employeeIDComboBox.Name = "employeeIDComboBox";
 			this.employeeIDComboBox.Size = new System.Drawing.Size(145, 21);
 			this.employeeIDComboBox.TabIndex = 3;
+			this.employeeIDComboBox.SelectedIndexChanged += new System.EventHandler(this.EmployeeIDComboBoxSelectedIndexChanged);
 			// 
 			// basicGroupBox
 			// 

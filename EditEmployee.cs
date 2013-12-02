@@ -51,5 +51,17 @@ namespace Project4
 		{
 			this.Close();
 		}
+		
+		void EmployeeIDComboBoxSelectedIndexChanged(object sender, EventArgs e)
+		{
+			// An employee ID needs to be selected in order to modify the attributes of the employee.
+			if (employeeIDComboBox.SelectedIndex != -1)
+			{
+				basicGroupBox.Enabled = true;
+				financialGroupBox.Enabled = true;
+				employmentGroupBox.Enabled = true;
+				deductionsGroupBox.Enabled = true;
+			}
+		}
 	}
 }
