@@ -483,5 +483,92 @@ namespace Project4
 			hourlyRadioButton.Checked = false;
 			salaryRadioButton.Checked = false;
 		}
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            if (monthComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a month to update.");
+            }
+            else if (employeeIDComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a valid employee ID.");
+            }
+            else if (employeeFirstNameComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a valid first name.");
+            }
+            else if (employeeLastNameComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a valid last name.");
+            }
+            else if (positionComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a valid position.");
+            }
+            else if (departmentComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a valid department.");
+            }
+            else if (hoursTextField.Text == "")
+            {
+                MessageBox.Show("Please enter new hours value.");
+                hoursTextField.Focus();
+            }
+            else if (rateTextField.Text == "")
+            {
+                MessageBox.Show("Please enter a new rate value.");
+                rateTextField.Focus();
+            }
+            else
+            {
+                // Try parsing new hours
+                try
+                {
+                    double newHours = double.Parse(hoursTextField.Text);
+                    // Try parsing new rate
+                    try
+                    {
+                        double newRate = double.Parse(rateTextField.Text);
+                        string newPosition = positionComboBox.Items[positionComboBox.SelectedIndex].ToString();
+                        string newDepartment = departmentComboBox.Items[departmentComboBox.SelectedIndex].ToString();
+                        int currentEmployee = employeeIDComboBox.SelectedIndex;
+                        int currentEmployeeId = int.Parse(employeeIDComboBox.Items[currentEmployee].ToString());
+                        int currentMonth = monthComboBox.SelectedIndex;
+
+                        // Save new data
+                        employeeArray[currentEmployee].Salary = newRate;
+                        employeeArray[currentEmployee].Position = newPosition;
+                        employeeArray[currentEmployee].Department = newDepartment;
+                        if (!medicalCheckBox.Checked)
+                            employeeArray[currentEmployee].Insurance = 0.0;
+                        if (!lifeInsuranceCheckBox.Checked)
+                            employeeArray[currentEmployee].LifeInsurance = 0.0;
+                        if (!fourCheckBox.Checked)
+                            employeeArray[currentEmployee].Retirement = 0.0;
+                        if (!fsaCheckBox.Checked)
+                            employeeArray[currentEmployee].FSA = 0.0;
+                        for (int i = 0; i < monthsArray[currentMonth].employeeIds.Length; i++)
+                        {
+                            if (monthsArray[currentMonth].employeeIds[i] == currentEmployeeId)
+                                monthsArray[currentMonth].employeeHours[i] = newHours;
+                        }
+
+                        // Success message
+                        MessageBox.Show("Employee information updated.");
+                    }
+                    catch (FormatException ex)
+                    {
+                        MessageBox.Show("Please enter a valid decimal number for rate.");
+                        rateTextField.Focus();
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("Please enter a valid decimal number for hours.");
+                    hoursTextField.Focus();
+                }
+            }
+        }
 	}
 }
