@@ -1,8 +1,8 @@
 ﻿/*  Program:        
-    Author:         Mike Chiu
+    Author:         Mike Chiu/Oscar Campos
     Class:          CISP41
     Date:           
-    Description: 
+    Description: 	Allows the user to make more specific adjustments to the employee.
 
     I certify that the code below is my own work.
  
@@ -26,7 +26,7 @@ namespace Project4
 		// Declare variables for 
 		
 		// Instantiate Objects from other classes
-		Accounts accountAccess = new Accounts();
+		Employee accountAccess = new Employee();
 		
 		public EditEmployee()
 		{
@@ -40,23 +40,16 @@ namespace Project4
 			//
 		}
 		
-		
-		void EmployeeIDComboBoxSelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (employeeIDComboBox.SelectedIndex != -1)
-			{
-				basicGroupBox.Enabled = true;
-				financialGroupBox.Enabled = true;
-				employmentGroupBox.Enabled = true;
-				deductionsGroupBox.Enabled = true;
-			}
-		}
-		
 		void HelpToolStripMenuItem1Click(object sender, EventArgs e)
 		{
 			// Instantiate Help
 			EditHelp showForm = new EditHelp();
 			showForm.ShowDialog();
+		}
+		
+		void CancelButtonClick(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

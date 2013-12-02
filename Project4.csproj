@@ -47,7 +47,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutMainForm.cs" />
+    <Compile Include="AboutMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AboutMainForm.Designer.cs">
       <DependentUpon>AboutMainForm.cs</DependentUpon>
     </Compile>
@@ -60,7 +62,9 @@
     <Compile Include="EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditHelp.cs" />
+    <Compile Include="EditHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EditHelp.Designer.cs">
       <DependentUpon>EditHelp.cs</DependentUpon>
     </Compile>

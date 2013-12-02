@@ -1,8 +1,8 @@
 ﻿/*  Program:        
-    Author:         Mike Chiu
+    Author:         Mike Chiu/Oscar Campos
     Class:          CISP41
     Date:           
-    Description: 
+    Description: 	
 
     I certify that the code below is my own work.
  
