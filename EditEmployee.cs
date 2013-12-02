@@ -91,10 +91,10 @@ namespace Project4
                 financialGroupBox.Enabled = true;
                 employmentGroupBox.Enabled = true;
                 deductionsGroupBox.Enabled = true;
-                newMedicalTextField.Enabled = true;
-                newLifeInsuranceTextField.Enabled = true;
+                //newMedicalTextField.Enabled = true;
+                //newLifeInsuranceTextField.Enabled = true;
                 newRetirementTextField.Enabled = true;
-                newFsaTextField.Enabled = true;
+                //newFsaTextField.Enabled = true;
                 
                 // Enable groupboxes based on deductions
                 if (medicalInsuranceCheckBox.Checked == true)
@@ -371,21 +371,6 @@ namespace Project4
             }
         }
 		
-		void MedicalInsuranceCheckBoxCheckedChanged(object sender, EventArgs e)
-		{
-			if (medicalInsuranceCheckBox.Checked == true)
-				newMedicalTextField.Enabled = true;
-			else
-				newMedicalTextField.Enabled = false;
-		}
-		
-		void LifeInsuranceCheckBoxCheckedChanged(object sender, EventArgs e)
-		{
-			if (lifeInsuranceCheckBox.Checked == true)
-				newLifeInsuranceTextField.Enabled = true;
-			else
-				newLifeInsuranceTextField.Enabled = false;
-		}
 		
 		void RetirementCheckBoxCheckedChanged(object sender, EventArgs e)
 		{
@@ -393,14 +378,6 @@ namespace Project4
 				newRetirementTextField.Enabled = true;
 			else
 				newRetirementTextField.Enabled = false;
-		}
-		
-		void FsaCheckBoxCheckedChanged(object sender, EventArgs e)
-		{
-			if (fsaCheckBox.Checked == true)
-				newFsaTextField.Enabled = true;
-			else
-				newFsaTextField.Enabled = false;
 		}
 	}
 }

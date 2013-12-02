@@ -96,7 +96,7 @@ namespace Project4
 			// 
 			// label1
 			// 
-			this.label1.Location = new System.Drawing.Point(12, 38);
+			this.label1.Location = new System.Drawing.Point(12, 37);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(112, 23);
 			this.label1.TabIndex = 0;
@@ -161,7 +161,7 @@ namespace Project4
 			// 
 			this.employeeIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.employeeIDComboBox.FormattingEnabled = true;
-			this.employeeIDComboBox.Location = new System.Drawing.Point(130, 35);
+			this.employeeIDComboBox.Location = new System.Drawing.Point(130, 34);
 			this.employeeIDComboBox.Name = "employeeIDComboBox";
 			this.employeeIDComboBox.Size = new System.Drawing.Size(145, 21);
 			this.employeeIDComboBox.TabIndex = 3;
@@ -174,7 +174,7 @@ namespace Project4
 			this.basicGroupBox.Controls.Add(this.label3);
 			this.basicGroupBox.Controls.Add(this.label2);
 			this.basicGroupBox.Enabled = false;
-			this.basicGroupBox.Location = new System.Drawing.Point(12, 65);
+			this.basicGroupBox.Location = new System.Drawing.Point(12, 64);
 			this.basicGroupBox.Name = "basicGroupBox";
 			this.basicGroupBox.Size = new System.Drawing.Size(263, 76);
 			this.basicGroupBox.TabIndex = 5;
@@ -218,7 +218,7 @@ namespace Project4
 			this.employmentGroupBox.Controls.Add(this.label5);
 			this.employmentGroupBox.Controls.Add(this.label4);
 			this.employmentGroupBox.Enabled = false;
-			this.employmentGroupBox.Location = new System.Drawing.Point(12, 147);
+			this.employmentGroupBox.Location = new System.Drawing.Point(12, 146);
 			this.employmentGroupBox.Name = "employmentGroupBox";
 			this.employmentGroupBox.Size = new System.Drawing.Size(263, 91);
 			this.employmentGroupBox.TabIndex = 6;
@@ -276,7 +276,7 @@ namespace Project4
 			this.deductionsGroupBox.Controls.Add(this.groupBox5);
 			this.deductionsGroupBox.Controls.Add(this.groupBox4);
 			this.deductionsGroupBox.Enabled = false;
-			this.deductionsGroupBox.Location = new System.Drawing.Point(291, 35);
+			this.deductionsGroupBox.Location = new System.Drawing.Point(291, 34);
 			this.deductionsGroupBox.Name = "deductionsGroupBox";
 			this.deductionsGroupBox.Size = new System.Drawing.Size(330, 252);
 			this.deductionsGroupBox.TabIndex = 7;
@@ -319,7 +319,6 @@ namespace Project4
 			this.fsaCheckBox.TabIndex = 0;
 			this.fsaCheckBox.Text = "Have an FSA";
 			this.fsaCheckBox.UseVisualStyleBackColor = true;
-			this.fsaCheckBox.CheckedChanged += new System.EventHandler(this.FsaCheckBoxCheckedChanged);
 			// 
 			// groupBox6
 			// 
@@ -395,7 +394,6 @@ namespace Project4
 			this.lifeInsuranceCheckBox.TabIndex = 0;
 			this.lifeInsuranceCheckBox.Text = "Have Insurance";
 			this.lifeInsuranceCheckBox.UseVisualStyleBackColor = true;
-			this.lifeInsuranceCheckBox.CheckedChanged += new System.EventHandler(this.LifeInsuranceCheckBoxCheckedChanged);
 			// 
 			// groupBox4
 			// 
@@ -433,7 +431,6 @@ namespace Project4
 			this.medicalInsuranceCheckBox.TabIndex = 0;
 			this.medicalInsuranceCheckBox.Text = "Have Insurance";
 			this.medicalInsuranceCheckBox.UseVisualStyleBackColor = true;
-			this.medicalInsuranceCheckBox.CheckedChanged += new System.EventHandler(this.MedicalInsuranceCheckBoxCheckedChanged);
 			// 
 			// financialGroupBox
 			// 
@@ -442,7 +439,7 @@ namespace Project4
 			this.financialGroupBox.Controls.Add(this.hourlyRadioButton);
 			this.financialGroupBox.Controls.Add(this.salaryRadioButton);
 			this.financialGroupBox.Enabled = false;
-			this.financialGroupBox.Location = new System.Drawing.Point(12, 244);
+			this.financialGroupBox.Location = new System.Drawing.Point(12, 243);
 			this.financialGroupBox.Name = "financialGroupBox";
 			this.financialGroupBox.Size = new System.Drawing.Size(263, 83);
 			this.financialGroupBox.TabIndex = 8;
@@ -486,7 +483,7 @@ namespace Project4
 			// 
 			// updateButton
 			// 
-			this.updateButton.Location = new System.Drawing.Point(291, 293);
+			this.updateButton.Location = new System.Drawing.Point(291, 292);
 			this.updateButton.Name = "updateButton";
 			this.updateButton.Size = new System.Drawing.Size(162, 23);
 			this.updateButton.TabIndex = 9;
@@ -496,7 +493,7 @@ namespace Project4
 			// 
 			// cancelButton
 			// 
-			this.cancelButton.Location = new System.Drawing.Point(460, 293);
+			this.cancelButton.Location = new System.Drawing.Point(460, 292);
 			this.cancelButton.Name = "cancelButton";
 			this.cancelButton.Size = new System.Drawing.Size(154, 23);
 			this.cancelButton.TabIndex = 10;
@@ -508,7 +505,7 @@ namespace Project4
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(633, 339);
+			this.ClientSize = new System.Drawing.Size(633, 333);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.updateButton);
 			this.Controls.Add(this.financialGroupBox);
