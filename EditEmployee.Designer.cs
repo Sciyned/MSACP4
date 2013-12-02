@@ -247,8 +247,8 @@ namespace Project4
             "Manager",
             "Engineer",
             "Technician",
-            "Clerical",
-            "Production"});
+            "Clerk",
+            "Producer"});
             this.employeePositionComboBox.Location = new System.Drawing.Point(93, 24);
             this.employeePositionComboBox.Name = "employeePositionComboBox";
             this.employeePositionComboBox.Size = new System.Drawing.Size(152, 21);
@@ -506,6 +506,7 @@ namespace Project4
             this.updateButton.TabIndex = 9;
             this.updateButton.Text = "&Update Employee Information";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // cancelButton
             // 

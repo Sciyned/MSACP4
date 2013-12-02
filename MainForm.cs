@@ -220,9 +220,18 @@ namespace Project4
 
         void EditEmployeeToolStripMenuItemClick(object sender, EventArgs e)
 		{
+            // Send employee array with count
             showForm.EmployeeArray = employeeArray;
             showForm.EmployeeCount = employeeCountInt;
 			showForm.ShowDialog();
+            // Get new employee array with new info
+            employeeArray = showForm.EmployeeArray;
+            // Refresh names in comboboxes
+            for (int i = 0; i < employeeCountInt; i++)
+            {
+                employeeFirstNameComboBox.Items[i] = employeeArray[i].FirstName;
+                employeeLastNameComboBox.Items[i] = employeeArray[i].LastName;
+            }
 		}
 
         private void employeeIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
