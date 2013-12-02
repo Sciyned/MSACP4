@@ -536,7 +536,6 @@ namespace Project4
                         int currentEmployeeId = int.Parse(employeeIDComboBox.Items[currentEmployee].ToString());
                         int currentMonth = monthComboBox.SelectedIndex;
 
-<<<<<<< HEAD
                         // Confirmation box before saving the data
 						var result = MessageBox.Show("Do you wish to update the information of " + employeeArray[currentEmployee].FirstName + " " + employeeArray[currentEmployee].LastName + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                         if (result == DialogResult.Yes)
@@ -566,28 +565,6 @@ namespace Project4
                         	MessageBox.Show("Update cancelled.");
                         
                         
-=======
-                        // Save new data
-                        employeeArray[currentEmployee].Salary = newRate;
-                        employeeArray[currentEmployee].Position = newPosition;
-                        employeeArray[currentEmployee].Department = newDepartment;
-                        if (!medicalCheckBox.Checked)
-                            employeeArray[currentEmployee].Insurance = 0.0;
-                        if (!lifeInsuranceCheckBox.Checked)
-                            employeeArray[currentEmployee].LifeInsurance = 0.0;
-                        if (!fourCheckBox.Checked)
-                            employeeArray[currentEmployee].Retirement = 0.0;
-                        if (!fsaCheckBox.Checked)
-                            employeeArray[currentEmployee].FSA = 0.0;
-                        for (int i = 0; i < monthsArray[currentMonth].employeeIds.Length; i++)
-                        {
-                            if (monthsArray[currentMonth].employeeIds[i] == currentEmployeeId)
-                                monthsArray[currentMonth].employeeHours[i] = newHours;
-                        }
-
-                        // Success message
-                        MessageBox.Show("Employee information updated.");
->>>>>>> 6ee955f06997f3a13020119e5f27fdfe08263094
                     }
                     catch (FormatException ex)
                     {
