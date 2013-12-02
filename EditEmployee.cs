@@ -95,7 +95,28 @@ namespace Project4
                 newLifeInsuranceTextField.Enabled = true;
                 newRetirementTextField.Enabled = true;
                 newFsaTextField.Enabled = true;
+                
+                // Enable groupboxes based on deductions
+                if (medicalInsuranceCheckBox.Checked == true)
+					newMedicalTextField.Enabled = true;
+				else
+					newMedicalTextField.Enabled = false;
+				
+				if (lifeInsuranceCheckBox.Checked == true)
+					newLifeInsuranceTextField.Enabled = true;
+				else
+					newLifeInsuranceTextField.Enabled = false;
 
+				if (retirementCheckBox.Checked == true)
+					newRetirementTextField.Enabled = true;
+				else
+					newRetirementTextField.Enabled = false;
+				
+				if (fsaCheckBox.Checked == true)
+					newFsaTextField.Enabled = true;
+				else
+					newFsaTextField.Enabled = false;
+				
                 // Display proper information in the form
                 employeeFirstNameTextField.Text = employeeArray[employeeIDComboBox.SelectedIndex].FirstName;
                 employeeLastNameTextField.Text = employeeArray[employeeIDComboBox.SelectedIndex].LastName;
@@ -350,5 +371,47 @@ namespace Project4
                 MessageBox.Show("Please select an employee to edit.");
             }
         }
+		
+		void MedicalInsuranceCheckBoxCheckedChanged(object sender, EventArgs e)
+		{
+			if (medicalInsuranceCheckBox.Checked == true)
+				newMedicalTextField.Enabled = true;
+			else
+				newMedicalTextField.Enabled = false;
+		}
+		
+		void LifeInsuranceCheckBoxCheckedChanged(object sender, EventArgs e)
+		{
+			if (lifeInsuranceCheckBox.Checked == true)
+				newLifeInsuranceTextField.Enabled = true;
+			else
+				newLifeInsuranceTextField.Enabled = false;
+		}
+		
+		void RetirementCheckBoxCheckedChanged(object sender, EventArgs e)
+		{
+			if (retirementCheckBox.Checked == true)
+				newRetirementTextField.Enabled = true;
+			else
+				newRetirementTextField.Enabled = false;
+		}
+		
+		void FsaCheckBoxCheckedChanged(object sender, EventArgs e)
+		{
+			if (fsaCheckBox.Checked == true)
+				newFsaTextField.Enabled = true;
+			else
+				newFsaTextField.Enabled = false;
+		}
+		
+		void SalaryRadioButtonCheckedChanged(object sender, EventArgs e)
+		{
+			newHoursTextField.Enabled = false;
+		}
+		
+		void HourlyRadioButtonCheckedChanged(object sender, EventArgs e)
+		{
+			newHoursTextField.Enabled = true;
+		}
 	}
 }
