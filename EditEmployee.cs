@@ -194,7 +194,7 @@ namespace Project4
             employeeDepartmentComboBox.SelectedIndex = -1;
             salaryRadioButton.Checked = false;
             hourlyRadioButton.Checked = false;
-            newHoursTextField.Text = "";
+            //newHoursTextField.Text = "";
             newRateTextField.Text = "";
             medicalInsuranceCheckBox.Checked = false;
             newMedicalTextField.Text = "0";
@@ -238,11 +238,11 @@ namespace Project4
                 {
                     MessageBox.Show("Please select a Department.");
                 }
-                else if (newHoursTextField.Text == "")
+                /*else if (newHoursTextField.Text == "")
                 {
                     MessageBox.Show("Please enter hours worked.");
                     newHoursTextField.Focus();
-                }
+                }*/
                 else if (newRateTextField.Text == "")
                 {
                     MessageBox.Show("Please enter a pay rate.");
@@ -277,92 +277,91 @@ namespace Project4
                         int employeePosition = employeePositionComboBox.SelectedIndex;
                         int employeeDepartment = employeeDepartmentComboBox.SelectedIndex;
                         int selectedEmployee = employeeIDComboBox.SelectedIndex;
-                        // Try parsing hours
+
+                        // Try parsing rate
                         try
-                        {
-                            double employeeHours = double.Parse(newHoursTextField.Text);
-                            // Try parsing rate
-                            try
-                            {
-                                double employeeRate = double.Parse(newRateTextField.Text);
-                                // Try parsing medical
-                                try
-                                {
-                                    double medicalDeductible = double.Parse(newMedicalTextField.Text);
-                                    // Try parsing life insurance
-                                    try
-                                    {
-                                        double lifeInsuranceDeductible = double.Parse(newLifeInsuranceTextField.Text);
-                                        // Try parsing 401k deductible
-                                        try
-                                        {
-                                            double retirementDeductible = double.Parse(newRetirementTextField.Text);
-                                            // Try parsing fsa deductible
-                                            try
-                                            {
-                                                double fsaDeductible = double.Parse(newFsaTextField.Text);
+                       	{
+                        	double employeeRate = double.Parse(newRateTextField.Text);
+                            // Try parsing medical
+							try
+							{
+								double medicalDeductible = double.Parse(newMedicalTextField.Text);
+								// Try parsing life insurance
+								try
+								{
+									double lifeInsuranceDeductible = double.Parse(newLifeInsuranceTextField.Text);
+									// Try parsing 401k deductible
+									try
+									{
+										double retirementDeductible = double.Parse(newRetirementTextField.Text);
+										// Try parsing fsa deductible
+										try
+										{
+											double fsaDeductible = double.Parse(newFsaTextField.Text);
 
-                                                // Save new values
-                                                employeeArray[selectedEmployee].FirstName = employeeFirstName;
-                                                employeeArray[selectedEmployee].LastName = employeeLastName;
-                                                employeeArray[selectedEmployee].Position = employeePositionComboBox.Items[employeePosition].ToString();
-                                                employeeArray[selectedEmployee].Department = employeeDepartmentComboBox.Items[employeeDepartment].ToString();
-                                                employeeArray[selectedEmployee].Salary = employeeRate;
-                                                if (medicalInsuranceCheckBox.Checked)
-                                                    employeeArray[selectedEmployee].Insurance = medicalDeductible;
-                                                else
-                                                    employeeArray[selectedEmployee].Insurance = 0.0;
-                                                if (lifeInsuranceCheckBox.Checked)
-                                                    employeeArray[selectedEmployee].LifeInsurance = lifeInsuranceDeductible;
-                                                else
-                                                    employeeArray[selectedEmployee].LifeInsurance = 0.0;
-                                                if (retirementCheckBox.Checked)
-                                                    employeeArray[selectedEmployee].Retirement = retirementDeductible;
-                                                else
-                                                    employeeArray[selectedEmployee].Retirement = 0.0;
-                                                if (fsaCheckBox.Checked)
-                                                    employeeArray[selectedEmployee].FSA = fsaDeductible;
-                                                else
-                                                    employeeArray[selectedEmployee].FSA = 0.0;
+											// Updating confirmation dialog box
+											var result = MessageBox.Show("Do you wish to update the information of " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+											if (result == DialogResult.Yes)
+											{
+												// Save new values
+												employeeArray[selectedEmployee].FirstName = employeeFirstName;
+												employeeArray[selectedEmployee].LastName = employeeLastName;
+												employeeArray[selectedEmployee].Position = employeePositionComboBox.Items[employeePosition].ToString();
+												employeeArray[selectedEmployee].Department = employeeDepartmentComboBox.Items[employeeDepartment].ToString();
+												employeeArray[selectedEmployee].Salary = employeeRate;
+												if (medicalInsuranceCheckBox.Checked)
+													employeeArray[selectedEmployee].Insurance = medicalDeductible;
+												else
+													employeeArray[selectedEmployee].Insurance = 0.0;
+												if (lifeInsuranceCheckBox.Checked)
+													employeeArray[selectedEmployee].LifeInsurance = lifeInsuranceDeductible;
+												else
+													employeeArray[selectedEmployee].LifeInsurance = 0.0;
+												if (retirementCheckBox.Checked)
+													employeeArray[selectedEmployee].Retirement = retirementDeductible;
+												else
+													employeeArray[selectedEmployee].Retirement = 0.0;
+												if (fsaCheckBox.Checked)
+													employeeArray[selectedEmployee].FSA = fsaDeductible;
+												else
+													employeeArray[selectedEmployee].FSA = 0.0;
 
-                                                // Success message
-                                                MessageBox.Show("Employee information updated.");
-                                            }
-                                            catch (FormatException ex)
-                                            {
-                                                MessageBox.Show("Please enter a valid decimal number for FSA amount.");
-                                                newFsaTextField.Focus();
-                                            }
-                                        }
-                                        catch (FormatException ex)
-                                        {
-                                            MessageBox.Show("Please enter a valid decimal number for 401k amount.");
-                                            newRetirementTextField.Focus();
-                                        }
-                                    }
-                                    catch (FormatException ex)
-                                    {
-                                        MessageBox.Show("Please enter a valid decimal number for life insurance amount.");
-                                        newLifeInsuranceTextField.Focus();
-                                    }
-                                }
-                                catch (FormatException ex)
-                                {
-                                    MessageBox.Show("Please enter a valid decimal number for medical insurance amount.");
-                                    newMedicalTextField.Focus();
-                                }
-                            }
-                            catch (FormatException ex)
-                            {
-                                MessageBox.Show("Please enter a valid decimal number for rate.");
-                                newRateTextField.Focus();
-                            }
+												// Success message
+												MessageBox.Show("Employee information updated.");
+											}
+											else
+												MessageBox.Show("Update cancelled.");
+											
+										}
+										catch (FormatException ex)
+										{
+											MessageBox.Show("Please enter a valid decimal number for FSA amount.");
+											newFsaTextField.Focus();
+										}
+									}
+									catch (FormatException ex)
+									{
+										MessageBox.Show("Please enter a valid decimal number for 401k amount.");
+										newRetirementTextField.Focus();
+									}
+								}
+								catch (FormatException ex)
+								{
+									MessageBox.Show("Please enter a valid decimal number for life insurance amount.");
+									newLifeInsuranceTextField.Focus();
+								}
+							}
+							catch (FormatException ex)
+							{
+								MessageBox.Show("Please enter a valid decimal number for medical insurance amount.");
+								newMedicalTextField.Focus();
+							}
                         }
-                        catch (FormatException ex)
-                        {
-                            MessageBox.Show("Please enter a valid decimal number for hours.");
-                            newHoursTextField.Focus();
-                        }
+						catch (FormatException ex)
+                    	{
+                        	MessageBox.Show("Please enter a valid decimal number for rate.");
+                        	newRateTextField.Focus();
+                    	}	                              
                     }
                 }
             }
@@ -402,16 +401,6 @@ namespace Project4
 				newFsaTextField.Enabled = true;
 			else
 				newFsaTextField.Enabled = false;
-		}
-		
-		void SalaryRadioButtonCheckedChanged(object sender, EventArgs e)
-		{
-			newHoursTextField.Enabled = false;
-		}
-		
-		void HourlyRadioButtonCheckedChanged(object sender, EventArgs e)
-		{
-			newHoursTextField.Enabled = true;
 		}
 	}
 }

@@ -143,6 +143,30 @@ namespace Project4
             }
         }
 
+        // Writes lines to the file
+        public void setLine(string[] lineData)
+        {
+            if (dataWriter == null)
+            {
+                // Create StreamWriter object
+                dataWriter = new StreamWriter(dataFileString);
+            }
+
+            string writeLine = "";
+            for (int i = 0; i < lineData.Length; i++)
+            {
+                if (i < 1)
+                {
+                    writeLine += lineData[i];
+                }
+                else
+                {
+                    writeLine += " " + lineData[i];
+                }
+            }
+            dataWriter.WriteLine(writeLine);
+        }
+
         // Closes the current file
         public void closeFile()
         {

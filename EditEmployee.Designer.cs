@@ -79,8 +79,6 @@ namespace Project4
 			this.financialGroupBox = new System.Windows.Forms.GroupBox();
 			this.newRateTextField = new System.Windows.Forms.TextBox();
 			this.label17 = new System.Windows.Forms.Label();
-			this.newHoursTextField = new System.Windows.Forms.TextBox();
-			this.label15 = new System.Windows.Forms.Label();
 			this.hourlyRadioButton = new System.Windows.Forms.RadioButton();
 			this.salaryRadioButton = new System.Windows.Forms.RadioButton();
 			this.updateButton = new System.Windows.Forms.Button();
@@ -155,7 +153,7 @@ namespace Project4
 			// helpToolStripMenuItem1
 			// 
 			this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-			this.helpToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.helpToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
 			this.helpToolStripMenuItem1.Text = "&Help";
 			this.helpToolStripMenuItem1.Click += new System.EventHandler(this.HelpToolStripMenuItem1Click);
 			// 
@@ -231,7 +229,7 @@ namespace Project4
 			// 
 			this.employeeDepartmentComboBox.FormattingEnabled = true;
 			this.employeeDepartmentComboBox.Items.AddRange(new object[] {
-									"Human Resources",
+									"HR",
 									"Accounting",
 									"R&D",
 									"Sales",
@@ -441,47 +439,30 @@ namespace Project4
 			// 
 			this.financialGroupBox.Controls.Add(this.newRateTextField);
 			this.financialGroupBox.Controls.Add(this.label17);
-			this.financialGroupBox.Controls.Add(this.newHoursTextField);
-			this.financialGroupBox.Controls.Add(this.label15);
 			this.financialGroupBox.Controls.Add(this.hourlyRadioButton);
 			this.financialGroupBox.Controls.Add(this.salaryRadioButton);
 			this.financialGroupBox.Enabled = false;
 			this.financialGroupBox.Location = new System.Drawing.Point(12, 244);
 			this.financialGroupBox.Name = "financialGroupBox";
-			this.financialGroupBox.Size = new System.Drawing.Size(263, 99);
+			this.financialGroupBox.Size = new System.Drawing.Size(263, 83);
 			this.financialGroupBox.TabIndex = 8;
 			this.financialGroupBox.TabStop = false;
 			this.financialGroupBox.Text = "Financial Information";
 			// 
 			// newRateTextField
 			// 
-			this.newRateTextField.Location = new System.Drawing.Point(95, 69);
+			this.newRateTextField.Location = new System.Drawing.Point(95, 46);
 			this.newRateTextField.Name = "newRateTextField";
 			this.newRateTextField.Size = new System.Drawing.Size(100, 20);
 			this.newRateTextField.TabIndex = 10;
 			// 
 			// label17
 			// 
-			this.label17.Location = new System.Drawing.Point(6, 69);
+			this.label17.Location = new System.Drawing.Point(6, 46);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(100, 23);
 			this.label17.TabIndex = 9;
 			this.label17.Text = "Rate:";
-			// 
-			// newHoursTextField
-			// 
-			this.newHoursTextField.Location = new System.Drawing.Point(95, 43);
-			this.newHoursTextField.Name = "newHoursTextField";
-			this.newHoursTextField.Size = new System.Drawing.Size(100, 20);
-			this.newHoursTextField.TabIndex = 6;
-			// 
-			// label15
-			// 
-			this.label15.Location = new System.Drawing.Point(6, 46);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(100, 23);
-			this.label15.TabIndex = 5;
-			this.label15.Text = "Hours:";
 			// 
 			// hourlyRadioButton
 			// 
@@ -492,7 +473,6 @@ namespace Project4
 			this.hourlyRadioButton.TabStop = true;
 			this.hourlyRadioButton.Text = "Hourly";
 			this.hourlyRadioButton.UseVisualStyleBackColor = true;
-			this.hourlyRadioButton.CheckedChanged += new System.EventHandler(this.HourlyRadioButtonCheckedChanged);
 			// 
 			// salaryRadioButton
 			// 
@@ -503,7 +483,6 @@ namespace Project4
 			this.salaryRadioButton.TabStop = true;
 			this.salaryRadioButton.Text = "Salary";
 			this.salaryRadioButton.UseVisualStyleBackColor = true;
-			this.salaryRadioButton.CheckedChanged += new System.EventHandler(this.SalaryRadioButtonCheckedChanged);
 			// 
 			// updateButton
 			// 
@@ -529,7 +508,7 @@ namespace Project4
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(633, 363);
+			this.ClientSize = new System.Drawing.Size(633, 339);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.updateButton);
 			this.Controls.Add(this.financialGroupBox);
@@ -572,8 +551,6 @@ namespace Project4
 		private System.Windows.Forms.Button updateButton;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.TextBox newRateTextField;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.TextBox newHoursTextField;
 		private System.Windows.Forms.RadioButton salaryRadioButton;
 		private System.Windows.Forms.RadioButton hourlyRadioButton;
 		private System.Windows.Forms.GroupBox financialGroupBox;
