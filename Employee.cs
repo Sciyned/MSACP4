@@ -18,7 +18,7 @@ using System.Text;
 
 namespace Project4
 {
-    class Employee
+    public class Employee
     {
         private int employeeIDInt;
         private string employeeFirstNameString;
