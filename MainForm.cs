@@ -220,7 +220,8 @@ namespace Project4
 
         void EditEmployeeToolStripMenuItemClick(object sender, EventArgs e)
 		{
-
+            showForm.EmployeeArray = employeeArray;
+            showForm.EmployeeCount = employeeCountInt;
 			showForm.ShowDialog();
 		}
 
@@ -257,7 +258,7 @@ namespace Project4
                 hourlyRadioButton.Checked = true;
                 rateTextField.Text = employeeArray[indexInt].Salary.ToString();
             }
-            else if (employeeArray[indexInt].Position == "Production")
+            else if (employeeArray[indexInt].Position == "Producer")
             {
                 positionComboBox.SelectedIndex = 4;
                 hourlyRadioButton.Checked = true;
@@ -325,7 +326,7 @@ namespace Project4
                 hourlyRadioButton.Checked = true;
                 rateTextField.Text = employeeArray[indexInt].Salary.ToString();
             }
-            else if (employeeArray[indexInt].Position == "Production")
+            else if (employeeArray[indexInt].Position == "Producer")
             {
                 positionComboBox.SelectedIndex = 4;
                 hourlyRadioButton.Checked = true;
@@ -393,7 +394,7 @@ namespace Project4
                 hourlyRadioButton.Checked = true;
                 rateTextField.Text = employeeArray[indexInt].Salary.ToString();
             }
-            else if (employeeArray[indexInt].Position == "Production")
+            else if (employeeArray[indexInt].Position == "Producer")
             {
                 positionComboBox.SelectedIndex = 4;
                 hourlyRadioButton.Checked = true;
