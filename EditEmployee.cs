@@ -294,49 +294,56 @@ namespace Project4
 									try
 									{
 										double retirementDeductible = double.Parse(newRetirementTextField.Text);
-										// Try parsing fsa deductible
-										try
+										if (retirementDeductible >= 17500)
 										{
-											double fsaDeductible = double.Parse(newFsaTextField.Text);
-
-											// Updating confirmation dialog box
-											var result = MessageBox.Show("Do you wish to update the information of " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-											if (result == DialogResult.Yes)
-											{
-												// Save new values
-												employeeArray[selectedEmployee].FirstName = employeeFirstName;
-												employeeArray[selectedEmployee].LastName = employeeLastName;
-												employeeArray[selectedEmployee].Position = employeePositionComboBox.Items[employeePosition].ToString();
-												employeeArray[selectedEmployee].Department = employeeDepartmentComboBox.Items[employeeDepartment].ToString();
-												employeeArray[selectedEmployee].Salary = employeeRate;
-												if (medicalInsuranceCheckBox.Checked)
-													employeeArray[selectedEmployee].Insurance = medicalDeductible;
-												else
-													employeeArray[selectedEmployee].Insurance = 0.0;
-												if (lifeInsuranceCheckBox.Checked)
-													employeeArray[selectedEmployee].LifeInsurance = lifeInsuranceDeductible;
-												else
-													employeeArray[selectedEmployee].LifeInsurance = 0.0;
-												if (retirementCheckBox.Checked)
-													employeeArray[selectedEmployee].Retirement = retirementDeductible;
-												else
-													employeeArray[selectedEmployee].Retirement = 0.0;
-												if (fsaCheckBox.Checked)
-													employeeArray[selectedEmployee].FSA = fsaDeductible;
-												else
-													employeeArray[selectedEmployee].FSA = 0.0;
-
-												// Success message
-												MessageBox.Show("Employee information updated.");
-											}
-											else
-												MessageBox.Show("Update cancelled.");
-											
+											MessageBox.Show("The 401K is too high for this year. Please adjust the amount to be under $17,500.");
 										}
-										catch (FormatException ex)
+										else
 										{
-											MessageBox.Show("Please enter a valid decimal number for FSA amount.");
-											newFsaTextField.Focus();
+											// Try parsing fsa deductible
+											try
+											{
+												double fsaDeductible = double.Parse(newFsaTextField.Text);
+	
+												// Updating confirmation dialog box
+												var result = MessageBox.Show("Do you wish to update the information of " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName + "?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+												if (result == DialogResult.Yes)
+												{
+													// Save new values
+													employeeArray[selectedEmployee].FirstName = employeeFirstName;
+													employeeArray[selectedEmployee].LastName = employeeLastName;
+													employeeArray[selectedEmployee].Position = employeePositionComboBox.Items[employeePosition].ToString();
+													employeeArray[selectedEmployee].Department = employeeDepartmentComboBox.Items[employeeDepartment].ToString();
+													employeeArray[selectedEmployee].Salary = employeeRate;
+													if (medicalInsuranceCheckBox.Checked)
+														employeeArray[selectedEmployee].Insurance = medicalDeductible;
+													else
+														employeeArray[selectedEmployee].Insurance = 0.0;
+													if (lifeInsuranceCheckBox.Checked)
+														employeeArray[selectedEmployee].LifeInsurance = lifeInsuranceDeductible;
+													else
+														employeeArray[selectedEmployee].LifeInsurance = 0.0;
+													if (retirementCheckBox.Checked)
+														employeeArray[selectedEmployee].Retirement = retirementDeductible;
+													else
+														employeeArray[selectedEmployee].Retirement = 0.0;
+													if (fsaCheckBox.Checked)
+														employeeArray[selectedEmployee].FSA = fsaDeductible;
+													else
+														employeeArray[selectedEmployee].FSA = 0.0;
+	
+													// Success message
+													MessageBox.Show("Employee information updated.");
+												}
+												else
+													MessageBox.Show("Update cancelled.");
+												
+											}
+											catch (FormatException ex)
+											{
+												MessageBox.Show("Please enter a valid decimal number for FSA amount.");
+												newFsaTextField.Focus();
+											}
 										}
 									}
 									catch (FormatException ex)

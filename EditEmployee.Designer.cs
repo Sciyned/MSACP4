@@ -313,6 +313,7 @@ namespace Project4
 			// 
 			// fsaCheckBox
 			// 
+			this.fsaCheckBox.Enabled = false;
 			this.fsaCheckBox.Location = new System.Drawing.Point(7, 20);
 			this.fsaCheckBox.Name = "fsaCheckBox";
 			this.fsaCheckBox.Size = new System.Drawing.Size(104, 24);
@@ -388,6 +389,7 @@ namespace Project4
 			// 
 			// lifeInsuranceCheckBox
 			// 
+			this.lifeInsuranceCheckBox.Enabled = false;
 			this.lifeInsuranceCheckBox.Location = new System.Drawing.Point(7, 20);
 			this.lifeInsuranceCheckBox.Name = "lifeInsuranceCheckBox";
 			this.lifeInsuranceCheckBox.Size = new System.Drawing.Size(104, 24);
@@ -425,6 +427,7 @@ namespace Project4
 			// 
 			// medicalInsuranceCheckBox
 			// 
+			this.medicalInsuranceCheckBox.Enabled = false;
 			this.medicalInsuranceCheckBox.Location = new System.Drawing.Point(7, 20);
 			this.medicalInsuranceCheckBox.Name = "medicalInsuranceCheckBox";
 			this.medicalInsuranceCheckBox.Size = new System.Drawing.Size(104, 24);
