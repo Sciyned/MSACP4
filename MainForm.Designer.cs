@@ -313,7 +313,7 @@ namespace Project4
             // 
             this.departmentComboBox.FormattingEnabled = true;
             this.departmentComboBox.Items.AddRange(new object[] {
-            "Human Resources",
+            "HR",
             "Accounting",
             "R&D",
             "Sales",
@@ -558,6 +558,7 @@ namespace Project4
             this.updateButton.TabIndex = 19;
             this.updateButton.Text = "&Update Employee";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // removeButton
             // 
