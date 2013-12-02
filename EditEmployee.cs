@@ -95,6 +95,7 @@ namespace Project4
                 newLifeInsuranceTextField.Enabled = true;
                 newRetirementTextField.Enabled = true;
                 newFsaTextField.Enabled = true;
+<<<<<<< HEAD
                 
                 if (medicalInsuranceCheckBox.Checked == true)
 					newMedicalTextField.Enabled = true;
@@ -116,6 +117,9 @@ namespace Project4
 				else
 					newFsaTextField.Enabled = false;
 				
+=======
+
+>>>>>>> df9e25dccf47d5ebabbbb8cf9aa5a7d699b9c077
                 // Display proper information in the form
                 employeeFirstNameTextField.Text = employeeArray[employeeIDComboBox.SelectedIndex].FirstName;
                 employeeLastNameTextField.Text = employeeArray[employeeIDComboBox.SelectedIndex].LastName;
@@ -193,6 +197,10 @@ namespace Project4
             employeeDepartmentComboBox.SelectedIndex = -1;
             salaryRadioButton.Checked = false;
             hourlyRadioButton.Checked = false;
+<<<<<<< HEAD
+=======
+            newHoursTextField.Text = "";
+>>>>>>> df9e25dccf47d5ebabbbb8cf9aa5a7d699b9c077
             newRateTextField.Text = "";
             medicalInsuranceCheckBox.Checked = false;
             newMedicalTextField.Text = "0";
@@ -212,6 +220,7 @@ namespace Project4
                 employeeIDComboBox.Items.Add(employeeArray[i].ID);
             }
         }
+<<<<<<< HEAD
 
 		void MedicalInsuranceCheckBoxCheckedChanged(object sender, EventArgs e)
 		{
@@ -244,5 +253,7 @@ namespace Project4
 			else
 				newFsaTextField.Enabled = false;
 		}
+=======
+>>>>>>> df9e25dccf47d5ebabbbb8cf9aa5a7d699b9c077
 	}
 }
