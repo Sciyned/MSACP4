@@ -468,21 +468,26 @@ namespace Project4
 		
 		void ClearButtonClick(object sender, EventArgs e)
 		{
-			monthComboBox.Text = "";
-			employeeIDComboBox.Text = "";
-			employeeFirstNameComboBox.Text = "";
-			employeeLastNameComboBox.Text = "";
-			positionComboBox.Text = "";
-			departmentComboBox.Text = "";
-			rateTextField.Text = "";
-			hoursTextField.Text = "";
-			medicalCheckBox.Checked = false;
-			fourCheckBox.Checked = false;
-			lifeInsuranceCheckBox.Checked = false;
-			fsaCheckBox.Checked = false;
-			hourlyRadioButton.Checked = false;
-			salaryRadioButton.Checked = false;
+            clearForm();
 		}
+
+        void clearForm()
+        {
+            monthComboBox.Text = "";
+            employeeIDComboBox.Text = "";
+            employeeFirstNameComboBox.Text = "";
+            employeeLastNameComboBox.Text = "";
+            positionComboBox.Text = "";
+            departmentComboBox.Text = "";
+            rateTextField.Text = "";
+            hoursTextField.Text = "";
+            medicalCheckBox.Checked = false;
+            fourCheckBox.Checked = false;
+            lifeInsuranceCheckBox.Checked = false;
+            fsaCheckBox.Checked = false;
+            hourlyRadioButton.Checked = false;
+            salaryRadioButton.Checked = false;
+        }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
@@ -656,6 +661,77 @@ namespace Project4
 
             // Success message
             MessageBox.Show("Saved data files successfully.");
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            // Remove selected employee
+            if (employeeIDComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an employee to remove.");
+            }
+            else
+            {
+                int selectedEmployee = employeeIDComboBox.SelectedIndex;
+                int selectedEmployeeID = employeeArray[selectedEmployee].ID;
+                Employee[] tempArray = new Employee[MAX_EMPLOYEES];
+
+                // Copy values from main array to temp array
+                int k = 0;
+                for(int i = 0; i < employeeCountInt; i++)
+                {
+                    if (employeeArray[i].ID != selectedEmployeeID)
+                    {
+                        tempArray[k] = new Employee();
+                        tempArray[k].ID = employeeArray[i].ID;
+                        tempArray[k].FirstName = employeeArray[i].FirstName;
+                        tempArray[k].LastName = employeeArray[i].LastName;
+                        tempArray[k].Department = employeeArray[i].Department;
+                        tempArray[k].Position = employeeArray[i].Position;
+                        tempArray[k].Salary = employeeArray[i].Salary;
+                        tempArray[k].Insurance = employeeArray[i].Insurance;
+                        tempArray[k].LifeInsurance = employeeArray[i].LifeInsurance;
+                        tempArray[k].Retirement = employeeArray[i].Retirement;
+                        tempArray[k].FSA = employeeArray[i].FSA;
+                        k++;
+                    }
+                }
+                
+                // Clear main array and copy values back
+                //employeeArray = null;
+                //employeeArray = new Employee[MAX_EMPLOYEES];
+                employeeCountInt = 0;
+                for(int i = 0; i < k; i++)
+                {
+                    employeeArray[i] = new Employee();
+                    employeeArray[i].ID = tempArray[i].ID;
+                    employeeArray[i].FirstName = tempArray[i].FirstName;
+                    employeeArray[i].LastName = tempArray[i].LastName;
+                    employeeArray[i].Department = tempArray[i].Department;
+                    employeeArray[i].Position = tempArray[i].Position;
+                    employeeArray[i].Salary = tempArray[i].Salary;
+                    employeeArray[i].Insurance = tempArray[i].Insurance;
+                    employeeArray[i].LifeInsurance = tempArray[i].LifeInsurance;
+                    employeeArray[i].Retirement = tempArray[i].Retirement;
+                    employeeArray[i].FSA = tempArray[i].FSA;
+                    employeeCountInt++;
+                }
+
+                // Refresh form values
+                employeeIDComboBox.Items.Clear();
+                employeeFirstNameComboBox.Items.Clear();
+                employeeLastNameComboBox.Items.Clear();
+                clearForm();
+                for (int i = 0; i < employeeCountInt; i++)
+                {
+                    employeeIDComboBox.Items.Add(employeeArray[i].ID);
+                    employeeFirstNameComboBox.Items.Add(employeeArray[i].FirstName);
+                    employeeLastNameComboBox.Items.Add(employeeArray[i].LastName);
+                }
+
+                // Success message
+                MessageBox.Show("Employee removed.");
+            }
         }
 	}
 }
