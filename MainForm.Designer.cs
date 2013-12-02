@@ -60,8 +60,6 @@ namespace Project4
 			this.removeEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.editEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-			this.editEmployerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.monthlySummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.completeSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -223,9 +221,7 @@ namespace Project4
 									this.updateEmployeeToolStripMenuItem,
 									this.removeEmployeeToolStripMenuItem,
 									this.toolStripSeparator3,
-									this.editEmployeeToolStripMenuItem,
-									this.toolStripSeparator4,
-									this.editEmployerInformationToolStripMenuItem});
+									this.editEmployeeToolStripMenuItem});
 			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
 			this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
 			this.editToolStripMenuItem.Text = "&Edit";
@@ -253,17 +249,6 @@ namespace Project4
 			this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
 			this.editEmployeeToolStripMenuItem.Text = "Edit Em&ployee Information";
 			this.editEmployeeToolStripMenuItem.Click += new System.EventHandler(this.EditEmployeeToolStripMenuItemClick);
-			// 
-			// toolStripSeparator4
-			// 
-			this.toolStripSeparator4.Name = "toolStripSeparator4";
-			this.toolStripSeparator4.Size = new System.Drawing.Size(212, 6);
-			// 
-			// editEmployerInformationToolStripMenuItem
-			// 
-			this.editEmployerInformationToolStripMenuItem.Name = "editEmployerInformationToolStripMenuItem";
-			this.editEmployerInformationToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-			this.editEmployerInformationToolStripMenuItem.Text = "&Edit Employer Information";
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -660,8 +645,6 @@ namespace Project4
 		private System.Windows.Forms.ToolStripMenuItem completeSummaryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem monthlySummaryToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem editEmployerInformationToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
 		private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 		private System.Windows.Forms.ToolStripMenuItem removeEmployeeToolStripMenuItem;

@@ -60,27 +60,25 @@ namespace Project4
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.deductionsGroupBox = new System.Windows.Forms.GroupBox();
-			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.fsaGroupBox = new System.Windows.Forms.GroupBox();
 			this.newFsaTextField = new System.Windows.Forms.TextBox();
 			this.label13 = new System.Windows.Forms.Label();
 			this.fsaCheckBox = new System.Windows.Forms.CheckBox();
-			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.retirementGroupBox = new System.Windows.Forms.GroupBox();
 			this.newRetirementTextField = new System.Windows.Forms.TextBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.retirementCheckBox = new System.Windows.Forms.CheckBox();
-			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.lifeGroupBox = new System.Windows.Forms.GroupBox();
 			this.newLifeInsuranceTextField = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.lifeInsuranceCheckBox = new System.Windows.Forms.CheckBox();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.medicalGroupBox = new System.Windows.Forms.GroupBox();
 			this.newMedicalTextField = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.medicalInsuranceCheckBox = new System.Windows.Forms.CheckBox();
 			this.financialGroupBox = new System.Windows.Forms.GroupBox();
 			this.newRateTextField = new System.Windows.Forms.TextBox();
 			this.label17 = new System.Windows.Forms.Label();
-			this.newHoursTextField = new System.Windows.Forms.TextBox();
-			this.label15 = new System.Windows.Forms.Label();
 			this.hourlyRadioButton = new System.Windows.Forms.RadioButton();
 			this.salaryRadioButton = new System.Windows.Forms.RadioButton();
 			this.updateButton = new System.Windows.Forms.Button();
@@ -89,10 +87,10 @@ namespace Project4
 			this.basicGroupBox.SuspendLayout();
 			this.employmentGroupBox.SuspendLayout();
 			this.deductionsGroupBox.SuspendLayout();
-			this.groupBox7.SuspendLayout();
-			this.groupBox6.SuspendLayout();
-			this.groupBox5.SuspendLayout();
-			this.groupBox4.SuspendLayout();
+			this.fsaGroupBox.SuspendLayout();
+			this.retirementGroupBox.SuspendLayout();
+			this.lifeGroupBox.SuspendLayout();
+			this.medicalGroupBox.SuspendLayout();
 			this.financialGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -229,6 +227,12 @@ namespace Project4
 			// employeeDepartmentComboBox
 			// 
 			this.employeeDepartmentComboBox.FormattingEnabled = true;
+			this.employeeDepartmentComboBox.Items.AddRange(new object[] {
+									"Human Resources",
+									"Accounting",
+									"R&D",
+									"Sales",
+									"Production"});
 			this.employeeDepartmentComboBox.Location = new System.Drawing.Point(93, 51);
 			this.employeeDepartmentComboBox.Name = "employeeDepartmentComboBox";
 			this.employeeDepartmentComboBox.Size = new System.Drawing.Size(152, 21);
@@ -237,6 +241,12 @@ namespace Project4
 			// employeePositionComboBox
 			// 
 			this.employeePositionComboBox.FormattingEnabled = true;
+			this.employeePositionComboBox.Items.AddRange(new object[] {
+									"Manager",
+									"Engineer",
+									"Technician",
+									"Clerical",
+									"Production"});
 			this.employeePositionComboBox.Location = new System.Drawing.Point(93, 24);
 			this.employeePositionComboBox.Name = "employeePositionComboBox";
 			this.employeePositionComboBox.Size = new System.Drawing.Size(152, 21);
@@ -260,10 +270,10 @@ namespace Project4
 			// 
 			// deductionsGroupBox
 			// 
-			this.deductionsGroupBox.Controls.Add(this.groupBox7);
-			this.deductionsGroupBox.Controls.Add(this.groupBox6);
-			this.deductionsGroupBox.Controls.Add(this.groupBox5);
-			this.deductionsGroupBox.Controls.Add(this.groupBox4);
+			this.deductionsGroupBox.Controls.Add(this.fsaGroupBox);
+			this.deductionsGroupBox.Controls.Add(this.retirementGroupBox);
+			this.deductionsGroupBox.Controls.Add(this.lifeGroupBox);
+			this.deductionsGroupBox.Controls.Add(this.medicalGroupBox);
 			this.deductionsGroupBox.Enabled = false;
 			this.deductionsGroupBox.Location = new System.Drawing.Point(291, 35);
 			this.deductionsGroupBox.Name = "deductionsGroupBox";
@@ -272,17 +282,17 @@ namespace Project4
 			this.deductionsGroupBox.TabStop = false;
 			this.deductionsGroupBox.Text = "Deductions";
 			// 
-			// groupBox7
+			// fsaGroupBox
 			// 
-			this.groupBox7.Controls.Add(this.newFsaTextField);
-			this.groupBox7.Controls.Add(this.label13);
-			this.groupBox7.Controls.Add(this.fsaCheckBox);
-			this.groupBox7.Location = new System.Drawing.Point(168, 129);
-			this.groupBox7.Name = "groupBox7";
-			this.groupBox7.Size = new System.Drawing.Size(155, 110);
-			this.groupBox7.TabIndex = 3;
-			this.groupBox7.TabStop = false;
-			this.groupBox7.Text = "Flexible Spending Account";
+			this.fsaGroupBox.Controls.Add(this.newFsaTextField);
+			this.fsaGroupBox.Controls.Add(this.label13);
+			this.fsaGroupBox.Controls.Add(this.fsaCheckBox);
+			this.fsaGroupBox.Location = new System.Drawing.Point(168, 129);
+			this.fsaGroupBox.Name = "fsaGroupBox";
+			this.fsaGroupBox.Size = new System.Drawing.Size(155, 110);
+			this.fsaGroupBox.TabIndex = 3;
+			this.fsaGroupBox.TabStop = false;
+			this.fsaGroupBox.Text = "Flexible Spending Account";
 			// 
 			// newFsaTextField
 			// 
@@ -308,18 +318,19 @@ namespace Project4
 			this.fsaCheckBox.TabIndex = 0;
 			this.fsaCheckBox.Text = "Have an FSA";
 			this.fsaCheckBox.UseVisualStyleBackColor = true;
+			this.fsaCheckBox.CheckedChanged += new System.EventHandler(this.FsaCheckBoxCheckedChanged);
 			// 
-			// groupBox6
+			// retirementGroupBox
 			// 
-			this.groupBox6.Controls.Add(this.newRetirementTextField);
-			this.groupBox6.Controls.Add(this.label11);
-			this.groupBox6.Controls.Add(this.retirementCheckBox);
-			this.groupBox6.Location = new System.Drawing.Point(6, 129);
-			this.groupBox6.Name = "groupBox6";
-			this.groupBox6.Size = new System.Drawing.Size(156, 110);
-			this.groupBox6.TabIndex = 2;
-			this.groupBox6.TabStop = false;
-			this.groupBox6.Text = "401K/Retirement";
+			this.retirementGroupBox.Controls.Add(this.newRetirementTextField);
+			this.retirementGroupBox.Controls.Add(this.label11);
+			this.retirementGroupBox.Controls.Add(this.retirementCheckBox);
+			this.retirementGroupBox.Location = new System.Drawing.Point(6, 129);
+			this.retirementGroupBox.Name = "retirementGroupBox";
+			this.retirementGroupBox.Size = new System.Drawing.Size(156, 110);
+			this.retirementGroupBox.TabIndex = 2;
+			this.retirementGroupBox.TabStop = false;
+			this.retirementGroupBox.Text = "401K/Retirement";
 			// 
 			// newRetirementTextField
 			// 
@@ -345,18 +356,19 @@ namespace Project4
 			this.retirementCheckBox.TabIndex = 0;
 			this.retirementCheckBox.Text = "Have 401K Plan";
 			this.retirementCheckBox.UseVisualStyleBackColor = true;
+			this.retirementCheckBox.CheckedChanged += new System.EventHandler(this.RetirementCheckBoxCheckedChanged);
 			// 
-			// groupBox5
+			// lifeGroupBox
 			// 
-			this.groupBox5.Controls.Add(this.newLifeInsuranceTextField);
-			this.groupBox5.Controls.Add(this.label9);
-			this.groupBox5.Controls.Add(this.lifeInsuranceCheckBox);
-			this.groupBox5.Location = new System.Drawing.Point(169, 20);
-			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(155, 103);
-			this.groupBox5.TabIndex = 1;
-			this.groupBox5.TabStop = false;
-			this.groupBox5.Text = "Life Insurance";
+			this.lifeGroupBox.Controls.Add(this.newLifeInsuranceTextField);
+			this.lifeGroupBox.Controls.Add(this.label9);
+			this.lifeGroupBox.Controls.Add(this.lifeInsuranceCheckBox);
+			this.lifeGroupBox.Location = new System.Drawing.Point(169, 20);
+			this.lifeGroupBox.Name = "lifeGroupBox";
+			this.lifeGroupBox.Size = new System.Drawing.Size(155, 103);
+			this.lifeGroupBox.TabIndex = 1;
+			this.lifeGroupBox.TabStop = false;
+			this.lifeGroupBox.Text = "Life Insurance";
 			// 
 			// newLifeInsuranceTextField
 			// 
@@ -382,18 +394,19 @@ namespace Project4
 			this.lifeInsuranceCheckBox.TabIndex = 0;
 			this.lifeInsuranceCheckBox.Text = "Have Insurance";
 			this.lifeInsuranceCheckBox.UseVisualStyleBackColor = true;
+			this.lifeInsuranceCheckBox.CheckedChanged += new System.EventHandler(this.LifeInsuranceCheckBoxCheckedChanged);
 			// 
-			// groupBox4
+			// medicalGroupBox
 			// 
-			this.groupBox4.Controls.Add(this.newMedicalTextField);
-			this.groupBox4.Controls.Add(this.label7);
-			this.groupBox4.Controls.Add(this.medicalInsuranceCheckBox);
-			this.groupBox4.Location = new System.Drawing.Point(7, 20);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(156, 103);
-			this.groupBox4.TabIndex = 0;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Medical/Dental";
+			this.medicalGroupBox.Controls.Add(this.newMedicalTextField);
+			this.medicalGroupBox.Controls.Add(this.label7);
+			this.medicalGroupBox.Controls.Add(this.medicalInsuranceCheckBox);
+			this.medicalGroupBox.Location = new System.Drawing.Point(7, 20);
+			this.medicalGroupBox.Name = "medicalGroupBox";
+			this.medicalGroupBox.Size = new System.Drawing.Size(156, 103);
+			this.medicalGroupBox.TabIndex = 0;
+			this.medicalGroupBox.TabStop = false;
+			this.medicalGroupBox.Text = "Medical/Dental";
 			// 
 			// newMedicalTextField
 			// 
@@ -419,52 +432,36 @@ namespace Project4
 			this.medicalInsuranceCheckBox.TabIndex = 0;
 			this.medicalInsuranceCheckBox.Text = "Have Insurance";
 			this.medicalInsuranceCheckBox.UseVisualStyleBackColor = true;
+			this.medicalInsuranceCheckBox.CheckedChanged += new System.EventHandler(this.MedicalInsuranceCheckBoxCheckedChanged);
 			// 
 			// financialGroupBox
 			// 
 			this.financialGroupBox.Controls.Add(this.newRateTextField);
 			this.financialGroupBox.Controls.Add(this.label17);
-			this.financialGroupBox.Controls.Add(this.newHoursTextField);
-			this.financialGroupBox.Controls.Add(this.label15);
 			this.financialGroupBox.Controls.Add(this.hourlyRadioButton);
 			this.financialGroupBox.Controls.Add(this.salaryRadioButton);
 			this.financialGroupBox.Enabled = false;
 			this.financialGroupBox.Location = new System.Drawing.Point(12, 244);
 			this.financialGroupBox.Name = "financialGroupBox";
-			this.financialGroupBox.Size = new System.Drawing.Size(263, 99);
+			this.financialGroupBox.Size = new System.Drawing.Size(263, 80);
 			this.financialGroupBox.TabIndex = 8;
 			this.financialGroupBox.TabStop = false;
 			this.financialGroupBox.Text = "Financial Information";
 			// 
 			// newRateTextField
 			// 
-			this.newRateTextField.Location = new System.Drawing.Point(95, 69);
+			this.newRateTextField.Location = new System.Drawing.Point(95, 46);
 			this.newRateTextField.Name = "newRateTextField";
 			this.newRateTextField.Size = new System.Drawing.Size(100, 20);
 			this.newRateTextField.TabIndex = 10;
 			// 
 			// label17
 			// 
-			this.label17.Location = new System.Drawing.Point(6, 69);
+			this.label17.Location = new System.Drawing.Point(6, 46);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(100, 23);
 			this.label17.TabIndex = 9;
 			this.label17.Text = "Rate:";
-			// 
-			// newHoursTextField
-			// 
-			this.newHoursTextField.Location = new System.Drawing.Point(95, 43);
-			this.newHoursTextField.Name = "newHoursTextField";
-			this.newHoursTextField.Size = new System.Drawing.Size(100, 20);
-			this.newHoursTextField.TabIndex = 6;
-			// 
-			// label15
-			// 
-			this.label15.Location = new System.Drawing.Point(6, 46);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(100, 23);
-			this.label15.TabIndex = 5;
-			this.label15.Text = "Hours:";
 			// 
 			// hourlyRadioButton
 			// 
@@ -509,7 +506,7 @@ namespace Project4
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(633, 363);
+			this.ClientSize = new System.Drawing.Size(633, 333);
 			this.Controls.Add(this.cancelButton);
 			this.Controls.Add(this.updateButton);
 			this.Controls.Add(this.financialGroupBox);
@@ -524,20 +521,21 @@ namespace Project4
 			this.Name = "EditEmployee";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "EditEmployee";
+			this.Load += new System.EventHandler(this.EditEmployee_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.basicGroupBox.ResumeLayout(false);
 			this.basicGroupBox.PerformLayout();
 			this.employmentGroupBox.ResumeLayout(false);
 			this.deductionsGroupBox.ResumeLayout(false);
-			this.groupBox7.ResumeLayout(false);
-			this.groupBox7.PerformLayout();
-			this.groupBox6.ResumeLayout(false);
-			this.groupBox6.PerformLayout();
-			this.groupBox5.ResumeLayout(false);
-			this.groupBox5.PerformLayout();
-			this.groupBox4.ResumeLayout(false);
-			this.groupBox4.PerformLayout();
+			this.fsaGroupBox.ResumeLayout(false);
+			this.fsaGroupBox.PerformLayout();
+			this.retirementGroupBox.ResumeLayout(false);
+			this.retirementGroupBox.PerformLayout();
+			this.lifeGroupBox.ResumeLayout(false);
+			this.lifeGroupBox.PerformLayout();
+			this.medicalGroupBox.ResumeLayout(false);
+			this.medicalGroupBox.PerformLayout();
 			this.financialGroupBox.ResumeLayout(false);
 			this.financialGroupBox.PerformLayout();
 			this.ResumeLayout(false);
@@ -551,27 +549,25 @@ namespace Project4
 		private System.Windows.Forms.Button updateButton;
 		private System.Windows.Forms.Label label17;
 		private System.Windows.Forms.TextBox newRateTextField;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.TextBox newHoursTextField;
 		private System.Windows.Forms.RadioButton salaryRadioButton;
 		private System.Windows.Forms.RadioButton hourlyRadioButton;
 		private System.Windows.Forms.GroupBox financialGroupBox;
 		private System.Windows.Forms.CheckBox retirementCheckBox;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TextBox newRetirementTextField;
-		private System.Windows.Forms.GroupBox groupBox6;
+		private System.Windows.Forms.GroupBox retirementGroupBox;
 		private System.Windows.Forms.CheckBox fsaCheckBox;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.TextBox newFsaTextField;
-		private System.Windows.Forms.GroupBox groupBox7;
+		private System.Windows.Forms.GroupBox fsaGroupBox;
 		private System.Windows.Forms.CheckBox lifeInsuranceCheckBox;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox newLifeInsuranceTextField;
 		private System.Windows.Forms.CheckBox medicalInsuranceCheckBox;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.TextBox newMedicalTextField;
-		private System.Windows.Forms.GroupBox groupBox4;
-		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.GroupBox medicalGroupBox;
+		private System.Windows.Forms.GroupBox lifeGroupBox;
 		private System.Windows.Forms.GroupBox deductionsGroupBox;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.ComboBox employeePositionComboBox;
