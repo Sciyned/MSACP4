@@ -29,7 +29,18 @@ namespace Project4
         const int MAX_EMPLOYEES = 50;
         Employee[] employeeArray = new Employee[MAX_EMPLOYEES];
         int employeeCountInt = 0;
-		
+
+        // Month data
+        const int MAX_MONTHS = 12;
+        MonthData[] monthsArray = new MonthData[MAX_MONTHS];
+
+        // Structure for storing individual month data
+        public struct MonthData
+        {
+            public int[] employeeIds;
+            public double[] employeeHours;
+        }
+
 		public PayrollMainForm()
 		{
 			//
@@ -80,65 +91,122 @@ namespace Project4
 
                 foreach (string pieceString in linePieceArray)
                 {
-                    if (pieceString != "")
+                    if (pieceInt == 0)
                     {
-                        // Piece isn't blank, read information into array
+                        // Employee ID
+                        employeeArray[employeeCountInt].ID = int.Parse(pieceString);
+                    }
+                    else if (pieceInt == 1)
+                    {
+                        // First Name
+                        employeeArray[employeeCountInt].FirstName = pieceString;
+                    }
+                    else if (pieceInt == 2)
+                    {
+                        // Last Name
+                        employeeArray[employeeCountInt].LastName = pieceString;
+                    }
+                    else if (pieceInt == 3)
+                    {
+                        // Department
+                        employeeArray[employeeCountInt].Department = pieceString;
+                    }
+                    else if (pieceInt == 4)
+                    {
+                        // Position
+                        employeeArray[employeeCountInt].Position = pieceString;
+                    }
+                    else if (pieceInt == 5)
+                    {
+                        // Salary
+                        employeeArray[employeeCountInt].Salary = double.Parse(pieceString);
+                    }
+                    else if (pieceInt == 6)
+                    {
+                        // Medical/Dental
+                        employeeArray[employeeCountInt].Insurance = double.Parse(pieceString);
+                    }
+                    else if (pieceInt == 7)
+                    {
+                        // Life Insurance
+                        employeeArray[employeeCountInt].LifeInsurance = double.Parse(pieceString);
+                    }
+                    else if (pieceInt == 8)
+                    {
+                        // 401k
+                        employeeArray[employeeCountInt].Retirement = double.Parse(pieceString);
+                    }
+                    else if (pieceInt == 9)
+                    {
+                        // FSA
+                        employeeArray[employeeCountInt].FSA = double.Parse(pieceString);
+                    }
+                    pieceInt++;
+                }
+                employeeCountInt++;
+                Console.WriteLine(employeeCountInt);
+            }
+            // Close the file
+            myData.closeFile();
+            myData = null;
 
+            // Read month data
+            int monthsInt = 0;
+            while (monthsInt < MAX_MONTHS)
+            {
+                DataProcessing monthData = new DataProcessing();
+                if (monthsInt == 0)
+                    monthData.DataFile = "data/jan.dat";
+                else if (monthsInt == 1)
+                    monthData.DataFile = "data/feb.dat";
+                else if (monthsInt == 2)
+                    monthData.DataFile = "data/mar.dat";
+                else if (monthsInt == 3)
+                    monthData.DataFile = "data/apr.dat";
+                else if (monthsInt == 4)
+                    monthData.DataFile = "data/may.dat";
+                else if (monthsInt == 5)
+                    monthData.DataFile = "data/jun.dat";
+                else if (monthsInt == 6)
+                    monthData.DataFile = "data/jul.dat";
+                else if (monthsInt == 7)
+                    monthData.DataFile = "data/aug.dat";
+                else if (monthsInt == 8)
+                    monthData.DataFile = "data/sep.dat";
+                else if (monthsInt == 9)
+                    monthData.DataFile = "data/oct.dat";
+                else if (monthsInt == 10)
+                    monthData.DataFile = "data/nov.dat";
+                else if (monthsInt == 11)
+                    monthData.DataFile = "data/dec.dat";
+                monthData.ReadFile = true;
+
+                // Read file
+                List<int> employeeIdList = new List<int>();
+                List<double> employeeHoursList = new List<double>();
+                while (monthData.hasLine())
+                {
+                    string[] linePieceArray = monthData.getLine();
+                    int pieceInt = 0;
+
+                    foreach (string pieceString in linePieceArray)
+                    {
                         if (pieceInt == 0)
                         {
-                            // Employee ID
-                            employeeArray[employeeCountInt].ID = int.Parse(pieceString);
+                            employeeIdList.Add(int.Parse(pieceString));
                         }
                         else if (pieceInt == 1)
                         {
-                            // First Name
-                            employeeArray[employeeCountInt].FirstName = pieceString;
-                        }
-                        else if (pieceInt == 2)
-                        {
-                            // Last Name
-                            employeeArray[employeeCountInt].LastName = pieceString;
-                        }
-                        else if (pieceInt == 3)
-                        {
-                            // Department
-                            employeeArray[employeeCountInt].Department = pieceString;
-                        }
-                        else if (pieceInt == 4)
-                        {
-                            // Position
-                            employeeArray[employeeCountInt].Position = pieceString;
-                        }
-                        else if (pieceInt == 5)
-                        {
-                            // Salary
-                            employeeArray[employeeCountInt].Salary = double.Parse(pieceString);
-                        }
-                        else if (pieceInt == 6)
-                        {
-                            // Medical/Dental
-                            employeeArray[employeeCountInt].Insurance = double.Parse(pieceString);
-                        }
-                        else if (pieceInt == 7)
-                        {
-                            // Life Insurance
-                            employeeArray[employeeCountInt].LifeInsurance = double.Parse(pieceString);
-                        }
-                        else if (pieceInt == 8)
-                        {
-                            // 401k
-                            employeeArray[employeeCountInt].Retirement = double.Parse(pieceString);
-                        }
-                        else if (pieceInt == 9)
-                        {
-                            // FSA
-                            employeeArray[employeeCountInt].FSA = double.Parse(pieceString);
+                            employeeHoursList.Add(double.Parse(pieceString));
                         }
                         pieceInt++;
                     }
                 }
-                employeeCountInt++;
-                Console.WriteLine(employeeCountInt);
+                monthsArray[monthsInt] = new MonthData();
+                monthsArray[monthsInt].employeeIds = employeeIdList.ToArray();
+                monthsArray[monthsInt].employeeHours = employeeHoursList.ToArray();
+                monthsInt++;
+                Console.WriteLine("Month: " + monthsInt.ToString());
             }
 
             // Insert results into form
@@ -217,6 +285,10 @@ namespace Project4
                 fourCheckBox.Checked = true;
             if (employeeArray[indexInt].FSA != 0.0)
                 fsaCheckBox.Checked = true;
+
+            // Clear selected month
+            monthComboBox.SelectedIndex = -1;
+            hoursTextField.Text = "";
         }
 
         private void employeeFirstNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -281,6 +353,10 @@ namespace Project4
                 fourCheckBox.Checked = true;
             if (employeeArray[indexInt].FSA != 0.0)
                 fsaCheckBox.Checked = true;
+
+            // Clear selected month
+            monthComboBox.SelectedIndex = -1;
+            hoursTextField.Text = "";
         }
 
         private void employeeLastNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -345,6 +421,10 @@ namespace Project4
                 fourCheckBox.Checked = true;
             if (employeeArray[indexInt].FSA != 0.0)
                 fsaCheckBox.Checked = true;
+
+            // Clear selected month
+            monthComboBox.SelectedIndex = -1;
+            hoursTextField.Text = "";
         }
 		
 		void AboutToolStripMenuItemClick(object sender, EventArgs e)
@@ -353,5 +433,26 @@ namespace Project4
 			AboutMainForm showForm = new AboutMainForm();
 			showForm.ShowDialog();
 		}
+
+        private void monthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Display proper information if employee and month is selected
+            if (employeeIDComboBox.SelectedIndex != -1 && monthComboBox.SelectedIndex != -1)
+            {
+                int selectedMonthInt = monthComboBox.SelectedIndex;
+                Console.WriteLine(selectedMonthInt);
+                double empHoursDouble = 0.0;
+
+                for (int i = 0; i < monthsArray[selectedMonthInt].employeeIds.Length; i++)
+                {
+                    if (monthsArray[selectedMonthInt].employeeIds[i].ToString() == employeeIDComboBox.Items[employeeIDComboBox.SelectedIndex].ToString())
+                    {
+                        empHoursDouble = monthsArray[selectedMonthInt].employeeHours[i];
+                    }
+                }
+
+                hoursTextField.Text = empHoursDouble.ToString();
+            }
+        }
 	}
 }
