@@ -40,6 +40,7 @@ namespace Project4
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollMainForm));
             this.employeeIDLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.departmentLabel = new System.Windows.Forms.Label();
@@ -47,11 +48,8 @@ namespace Project4
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +91,8 @@ namespace Project4
             this.printButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.employeeMonthlyDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.menuStrip1.SuspendLayout();
             this.basicInfoGroupBox.SuspendLayout();
             this.addInfoGroupBox.SuspendLayout();
@@ -157,29 +157,14 @@ namespace Project4
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newFileToolStripMenuItem,
-            this.openFileToolStripMenuItem,
             this.saveFileToolStripMenuItem,
             this.toolStripSeparator1,
-            this.printPreviewToolStripMenuItem,
             this.printToolStripMenuItem,
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // newFileToolStripMenuItem
-            // 
-            this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.newFileToolStripMenuItem.Text = "&New File";
-            // 
-            // openFileToolStripMenuItem
-            // 
-            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.openFileToolStripMenuItem.Text = "&Open File";
             // 
             // saveFileToolStripMenuItem
             // 
@@ -193,17 +178,12 @@ namespace Project4
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
             // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print P&review";
-            // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.printToolStripMenuItem.Text = "&Print Employee Information";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -240,6 +220,7 @@ namespace Project4
             this.removeEmployeeToolStripMenuItem.Name = "removeEmployeeToolStripMenuItem";
             this.removeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.removeEmployeeToolStripMenuItem.Text = "&Remove Employee";
+            this.removeEmployeeToolStripMenuItem.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // toolStripSeparator3
             // 
@@ -566,6 +547,7 @@ namespace Project4
             this.printButton.TabIndex = 21;
             this.printButton.Text = "Print Current Information";
             this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
             // exitButton
             // 
@@ -586,6 +568,20 @@ namespace Project4
             this.clearButton.Text = "&Clear Fields";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.ClearButtonClick);
+            // 
+            // employeeMonthlyDocument
+            // 
+            this.employeeMonthlyDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.employeeMonthlyDocument_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // PayrollMainForm
             // 
@@ -658,12 +654,9 @@ namespace Project4
 		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-		private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-		private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem newFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.Label lastNameLabel;
@@ -671,5 +664,7 @@ namespace Project4
 		private System.Windows.Forms.Label departmentLabel;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label employeeIDLabel;
+        private System.Drawing.Printing.PrintDocument employeeMonthlyDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
 	}
 }

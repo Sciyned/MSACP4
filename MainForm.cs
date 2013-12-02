@@ -144,7 +144,6 @@ namespace Project4
                     pieceInt++;
                 }
                 employeeCountInt++;
-                Console.WriteLine(employeeCountInt);
             }
             // Close the file
             myData.closeFile();
@@ -206,7 +205,6 @@ namespace Project4
                 monthsArray[monthsInt].employeeIds = employeeIdList.ToArray();
                 monthsArray[monthsInt].employeeHours = employeeHoursList.ToArray();
                 monthsInt++;
-                Console.WriteLine("Month: " + monthsInt.ToString());
             }
 
             // Insert results into form
@@ -451,7 +449,6 @@ namespace Project4
             if (employeeIDComboBox.SelectedIndex != -1 && monthComboBox.SelectedIndex != -1)
             {
                 int selectedMonthInt = monthComboBox.SelectedIndex;
-                Console.WriteLine(selectedMonthInt);
                 double empHoursDouble = 0.0;
 
                 for (int i = 0; i < monthsArray[selectedMonthInt].employeeIds.Length; i++)
@@ -732,6 +729,139 @@ namespace Project4
                 // Success message
                 MessageBox.Show("Employee removed.");
             }
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            // Print monthly report
+            if (monthComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a month to print a document for.");
+            }
+            else if (employeeIDComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an employee to print a document for.");
+            }
+            else if (employeeFirstNameComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an employee to print a document for.");
+            }
+            else if (employeeLastNameComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an employee to print a document for.");
+            }
+            else
+            {
+                // Calculate totals
+                int employeeId = employeeArray[employeeIDComboBox.SelectedIndex].ID;
+                employeeArray[employeeIDComboBox.SelectedIndex].resetTotals();
+
+                for (int i = 0; i < monthsArray.Length; i++)
+                {
+                    double monthHours = 0.0;
+                    // Find corresponding hours
+                    for (int k = 0; k < monthsArray[i].employeeIds.Length; k++)
+                    {
+                        if (monthsArray[i].employeeIds[k] == employeeId)
+                        {
+                            monthHours = monthsArray[i].employeeHours[k];
+                        }
+                    }
+
+                    // Run calculations
+                    employeeArray[employeeIDComboBox.SelectedIndex].calculateMonth(i, monthHours);
+                }
+
+                // Show print preview
+                printPreviewDialog1.Document = employeeMonthlyDocument;
+                printPreviewDialog1.ShowDialog();
+            }
+        }
+
+        private void employeeMonthlyDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // Generate monthly report
+            int selectedMonth = monthComboBox.SelectedIndex;
+            int selectedEmployee = employeeIDComboBox.SelectedIndex;
+            Font headerFont = new Font("Courier", 16, FontStyle.Bold);
+            Font docFont = new Font("Courier", 12);
+            float xFloat = e.MarginBounds.Left;
+            float yFloat = e.MarginBounds.Top;
+            float fontHeight = docFont.GetHeight();
+
+            // Set pay type and hours worked
+            double hoursWorked = 0.0;
+            string payType = "";
+            if (employeeArray[selectedEmployee].Position == "Manager" || employeeArray[selectedEmployee].Position == "Engineer")
+                payType = "Salary";
+            else
+                payType = "Hourly";
+            for (int i = 0; i < monthsArray[selectedMonth].employeeIds.Length; i++)
+            {
+                if (monthsArray[selectedMonth].employeeIds[i] == employeeArray[selectedEmployee].ID)
+                {
+                    hoursWorked = monthsArray[selectedMonth].employeeHours[i];
+                }
+            }
+
+            // Draw title string
+            if (selectedMonth == 0)
+                e.Graphics.DrawString("January report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 1)
+                e.Graphics.DrawString("February report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 2)
+                e.Graphics.DrawString("March report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 3)
+                e.Graphics.DrawString("April report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 4)
+                e.Graphics.DrawString("May report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 5)
+                e.Graphics.DrawString("June report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 6)
+                e.Graphics.DrawString("July report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 7)
+                e.Graphics.DrawString("August report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 8)
+                e.Graphics.DrawString("September report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 9)
+                e.Graphics.DrawString("October report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 10)
+                e.Graphics.DrawString("November report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            else if (selectedMonth == 11)
+                e.Graphics.DrawString("December report for " + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, headerFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight * 3;
+
+            // Draw document contents
+            e.Graphics.DrawString("ID:\t\t" + employeeArray[selectedEmployee].ID.ToString(), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Employee Name:\t" + employeeArray[selectedEmployee].FirstName + " " + employeeArray[selectedEmployee].LastName, docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Department:\t" + employeeArray[selectedEmployee].Department, docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Position:\t\t" + employeeArray[selectedEmployee].Position, docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Pay Type:\t" + payType, docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Hours Worked:\t" + hoursWorked.ToString(), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Gross Pay:\t" + employeeArray[selectedEmployee].MonthlyGrossPay[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Medical/Dental:\t" + employeeArray[selectedEmployee].MonthlyMedical[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Life Insurance:\t" + employeeArray[selectedEmployee].MonthlyLifeInsurance[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("401k:\t\t" + employeeArray[selectedEmployee].MonthlyRetirement[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("FSA:\t\t" + employeeArray[selectedEmployee].MonthlyFSA[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Social Security:\t" + employeeArray[selectedEmployee].MonthlySocialSecurity[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Federal Tax:\t" + employeeArray[selectedEmployee].MonthlyFederalIncomeTax[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("State Tax:\t" + employeeArray[selectedEmployee].MonthlyStateIncomeTax[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
+            e.Graphics.DrawString("Net Pay:\t\t" + employeeArray[selectedEmployee].MonthlyNetPay[selectedMonth].ToString("C"), docFont, Brushes.Black, xFloat, yFloat);
+            yFloat += fontHeight;
         }
 	}
 }
