@@ -29,15 +29,3 @@ E:\C#Dev\Project4\obj\Debug\Project4.EditHelp.resources
 C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.AboutMainForm.resources
 C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.EditHelp.resources
 C:\Users\Miku\Documents\Visual Studio 2010\Projects\MSACP4\obj\Debug\Project4.csprojResolveAssemblyReference.cache
-E:\C#Dev\MSACP4-master\bin\Debug\Project4.exe
-E:\C#Dev\MSACP4-master\bin\Debug\Project4.pdb
-E:\C#Dev\MSACP4-master\obj\Debug\ResolveAssemblyReference.cache
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.AboutMainForm.resources
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.EditEmployee.resources
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.EditHelp.resources
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.PayrollMainForm.resources
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.SplashForm.resources
-E:\C#Dev\MSACP4-master\obj\Debug\GenerateResource.read.1.tlog
-E:\C#Dev\MSACP4-master\obj\Debug\GenerateResource.write.1.tlog
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.exe
-E:\C#Dev\MSACP4-master\obj\Debug\Project4.pdb
