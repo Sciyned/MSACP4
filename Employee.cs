@@ -37,6 +37,7 @@ namespace Project4
         private const double SOCIAL_SECURITY_TAX = 0.10;
         private const double FEDERAL_INCOME_TAX = 0.15;
         private const double STATE_INCOME_TAX = 0.05;
+        private const int MAX_401K_CONTRIBUTION = 17500;
 
         // Employee earnings/taxes variables
         private double[] monthlyGrossPayArray = new double[MAX_MONTHS];
@@ -422,9 +423,31 @@ namespace Project4
                     }
                     if (employeeRetirementDouble != 0.0)
                     {
-                        monthlyRetirementArray[month] = employeeRetirementDouble;
-                        totalRetirementDouble += employeeRetirementDouble;
-                        tempPayDouble -= employeeRetirementDouble;
+                        double tempRetirement = totalRetirementDouble + employeeRetirementDouble;
+                        if (tempRetirement > MAX_401K_CONTRIBUTION)
+                        {
+                            // 401k limit reached
+                            if ((tempRetirement - MAX_401K_CONTRIBUTION) > employeeRetirementDouble)
+                            {
+                                // 401k already at limit, don't adjust deduction
+                                monthlyRetirementArray[month] = 0.0;
+                            }
+                            else
+                            {
+                                // 401k reaches limit with this deduction, adjust deduction to stop at limit
+                                double adjRetirement = employeeRetirementDouble - (tempRetirement - MAX_401K_CONTRIBUTION);
+                                monthlyRetirementArray[month] = adjRetirement;
+                                totalRetirementDouble += adjRetirement;
+                                tempPayDouble -= adjRetirement;
+                            }
+                        }
+                        else
+                        {
+                            // Continue to add to 401k
+                            monthlyRetirementArray[month] = employeeRetirementDouble;
+                            totalRetirementDouble += employeeRetirementDouble;
+                            tempPayDouble -= employeeRetirementDouble;
+                        }
                     }
                     else
                     {
